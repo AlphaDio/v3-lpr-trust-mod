@@ -1,0 +1,33 @@
+# ============================================================================
+# BOND MARKET GLOBAL HISTORY INITIALIZATION
+# ============================================================================
+# This file initializes the bond trust system at game start.
+# It sets up the bond_trust variable for all countries and adds the debug
+# journal entry for players and debug mode countries.
+# ============================================================================
+
+# This is executed last among all history files
+GLOBAL = {
+	# Initialize bond trust variable for all countries
+	# Starts at 60 (medium trust level) for balanced gameplay
+	every_country = {
+		set_variable = {
+			name = bond_trust
+			value = 60
+		}
+	}
+
+	# Add debug journal entry for player countries and debug mode
+	# This provides an in-game UI element showing current bond market status
+	every_country = {
+		limit = {
+			OR = {
+				is_player = yes
+				is_debug_mode = yes
+			}
+		}
+		add_journal_entry = {
+			type = je_bond_market_debug
+		}
+	}
+}

@@ -1,0 +1,41 @@
+# ============================================================================
+# THE BOND MARKET JOURNAL ENTRY
+# ============================================================================
+# This journal entry provides debugging information for the bond market system.
+# It displays current bond trust value, tier, and economic indicators to help
+# players and developers understand how the bond market mechanics are working.
+# ============================================================================
+
+# Journal entry that displays bond market debug information
+je_bond_market_debug = {
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	# Groups this entry under Economy in the journal UI
+	group = je_group_economy
+
+	# Show this entry for debug mode or player countries
+	is_shown_when_inactive = {
+		OR = {
+			is_player = yes
+			is_debug_mode = yes
+		}
+	}
+
+	# Available to all countries in debug mode, or to players
+	possible = {
+		OR = {
+			is_player = yes
+			is_debug_mode = yes
+		}
+	}
+
+	# Never completes - this is a permanent debugging entry
+	complete = {
+		always = no
+	}
+
+	# Display the current bond market debug information
+	status_desc = {
+		desc = je_bond_market_debug_status
+	}
+}

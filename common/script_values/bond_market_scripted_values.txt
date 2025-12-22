@@ -1,0 +1,23 @@
+# ============================================================================
+# BOND MARKET SCRIPTED VALUES FOR UI DISPLAY
+# ============================================================================
+# These scripted values allow the journal entry to display bond market debug
+# information in the game UI. They reference country variables and game state
+# to show current trust levels, economic indicators, and system status.
+# ============================================================================
+
+# Scripted value for displaying current bond trust value
+bond_market_trust_value = {
+	value = var:bond_trust
+}
+
+# Scripted value for displaying scaled debt as percentage (multiplied by 100 for display)
+bond_market_debt_percentage = {
+	value = scaled_debt
+	multiply = 100
+}
+
+# Scripted value for displaying net fixed income (positive = surplus, negative = deficit)
+bond_market_net_income = {
+	value = net_fixed_income
+}

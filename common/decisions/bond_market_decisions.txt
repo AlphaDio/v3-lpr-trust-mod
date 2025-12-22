@@ -1,0 +1,79 @@
+# Bond Market Debug Decisions
+# Debug decisions for testing the bond trust system
+
+# Category for bond market debug decisions
+decisions = {
+	bond_market_debug_category = {
+		icon = debug_mode
+
+		# Decision to show current bond trust
+		bond_market_show_trust = {
+			icon = debug_mode
+			available = {
+				is_debug_mode = yes
+			}
+			visible = {
+				is_debug_mode = yes
+			}
+
+			# Initialize trust if missing
+			effect = {
+				if = {
+					limit = {
+						NOT = { has_variable = bond_trust }
+					}
+					set_variable = { which = bond_trust value = 60 }
+				}
+				country_event = bond_market_debug_show_trust.1
+			}
+		}
+
+		# Decision to set trust to 10 (very low)
+		bond_market_set_trust_10 = {
+			icon = debug_mode
+			available = {
+				is_debug_mode = yes
+			}
+			visible = {
+				is_debug_mode = yes
+			}
+
+			effect = {
+				set_variable = { which = bond_trust value = 10 }
+				country_event = bond_market_debug_set_trust.1
+			}
+		}
+
+		# Decision to set trust to 60 (medium)
+		bond_market_set_trust_60 = {
+			icon = debug_mode
+			available = {
+				is_debug_mode = yes
+			}
+			visible = {
+				is_debug_mode = yes
+			}
+
+			effect = {
+				set_variable = { which = bond_trust value = 60 }
+				country_event = bond_market_debug_set_trust.1
+			}
+		}
+
+		# Decision to set trust to 95 (very high)
+		bond_market_set_trust_95 = {
+			icon = debug_mode
+			available = {
+				is_debug_mode = yes
+			}
+			visible = {
+				is_debug_mode = yes
+			}
+
+			effect = {
+				set_variable = { which = bond_trust value = 95 }
+				country_event = bond_market_debug_set_trust.1
+			}
+		}
+	}
+}
