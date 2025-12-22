@@ -39,4 +39,4 @@ l_english:
 
 # Journal entry localization
  je_bond_market_debug: "The Bond Market"
- je_bond_market_debug_status: "Trust: £bond_market_trust_value$ | Tier: £bond_market_trust_value|V <= 19 ? 'Very Low' : £bond_market_trust_value|V <= 39 ? 'Low' : £bond_market_trust_value|V <= 59 ? 'Medium' : £bond_market_trust_value|V <= 79 ? 'High' : 'Very High'$ | Debt: £bond_market_debt_percentage$% | Income: £bond_market_net_income$"
+ je_bond_market_debug_status: "Trust: [GetPlayer.MakeScope.ScriptValue('bond_market_trust_value')|0]\nDebt: [GetPlayer.MakeScope.ScriptValue('bond_market_debt_percentage')|0]%\nIncome: [GetPlayer.MakeScope.ScriptValue('bond_market_net_income')|0]"
