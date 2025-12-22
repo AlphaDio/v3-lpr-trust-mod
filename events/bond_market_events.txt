@@ -1,8 +1,8 @@
-# Bond Market Trust System Events
+﻿# Bond Market Trust System Events
 # This file contains the country event that handles the monthly bond trust updates
 
 country_event = {
-	id = bond_market_trust.1
+	id = bond_market_trust_update.1
 	title = bond_market_trust_update_title
 	desc = bond_market_trust_update_desc
 
@@ -18,18 +18,18 @@ country_event = {
 		# Initialize bond_trust variable if it doesn't exist
 		if = {
 			limit = {
-				NOT = { has_variable = bond_trust }
+				NOT = { has_country_variable = bond_trust }
 			}
-			set_variable = { which = bond_trust value = 60 }
+			set_country_variable = { name = bond_trust value = 60 }
 		}
 
 		# Calculate trust change based on economic conditions
-		set_temp_variable = { trust_change = 0 }
+		set_temp_variable = { name = trust_change value = 0 }
 
 		# Penalty for being in default (-20)
 		if = {
-			limit = { is_in_default = yes }
-			change_temp_variable = { trust_change = -20 }
+			limit = { has_country_flag = in_default }
+			set_temp_variable = { name = trust_change value = -20 }
 		}
 
 		# Debt-based penalties (only if not in default)
@@ -37,15 +37,15 @@ country_event = {
 			# High debt penalties
 			if = {
 				limit = { scaled_debt >= 0.90 }
-				change_temp_variable = { trust_change = -5 }
+				set_temp_variable = { name = trust_change value = -5 }
 			}
 			else_if = {
 				limit = { scaled_debt >= 0.70 }
-				change_temp_variable = { trust_change = -3 }
+				set_temp_variable = { name = trust_change value = -3 }
 			}
 			else_if = {
 				limit = { scaled_debt >= 0.50 }
-				change_temp_variable = { trust_change = -1 }
+				set_temp_variable = { name = trust_change value = -1 }
 			}
 
 			# Bonus for low debt and surplus (only if not in deficit)
@@ -54,34 +54,34 @@ country_event = {
 					scaled_debt <= 0.20
 					net_fixed_income >= 0  # Country is not in deficit (has surplus or balanced budget)
 				}
-				change_temp_variable = { trust_change = 2 }
+				set_temp_variable = { name = trust_change value = 2 }
 			}
 		}
 
 		# Small drift toward 60
 		if = {
-			limit = { check_variable = { which = bond_trust value < 60 } }
-			change_temp_variable = { trust_change = 1 }
+			limit = { check_country_variable = { name = bond_trust value < 60 } }
+			change_temp_variable = { name = trust_change value = 1 }
 		}
 		else_if = {
-			limit = { check_variable = { which = bond_trust value > 60 } }
-			change_temp_variable = { trust_change = -1 }
+			limit = { check_country_variable = { name = bond_trust value > 60 } }
+			change_temp_variable = { name = trust_change value = -1 }
 		}
 
 		# Apply the trust change
-		change_variable = {
-			which = bond_trust
+		change_country_variable = {
+			name = bond_trust
 			value = temp:trust_change
 		}
 
 		# Clamp trust between 0 and 100
 		if = {
-			limit = { check_variable = { which = bond_trust value < 0 } }
-			set_variable = { which = bond_trust value = 0 }
+			limit = { check_country_variable = { name = bond_trust value < 0 } }
+			set_country_variable = { name = bond_trust value = 0 }
 		}
 		if = {
-			limit = { check_variable = { which = bond_trust value > 100 } }
-			set_variable = { which = bond_trust value = 100 }
+			limit = { check_country_variable = { name = bond_trust value > 100 } }
+			set_country_variable = { name = bond_trust value = 100 }
 		}
 
 		# Remove old tier modifiers
@@ -93,19 +93,19 @@ country_event = {
 
 		# Apply new tier modifier based on current trust
 		if = {
-			limit = { check_variable = { which = bond_trust value <= 19 } }
+			limit = { check_country_variable = { name = bond_trust value <= 19 } }
 			add_country_modifier = { modifier = bond_trust_tier_0_19 duration = -1 }
 		}
 		else_if = {
-			limit = { check_variable = { which = bond_trust value <= 39 } }
+			limit = { check_country_variable = { name = bond_trust value <= 39 } }
 			add_country_modifier = { modifier = bond_trust_tier_20_39 duration = -1 }
 		}
 		else_if = {
-			limit = { check_variable = { which = bond_trust value <= 59 } }
+			limit = { check_country_variable = { name = bond_trust value <= 59 } }
 			add_country_modifier = { modifier = bond_trust_tier_40_59 duration = -1 }
 		}
 		else_if = {
-			limit = { check_variable = { which = bond_trust value <= 79 } }
+			limit = { check_country_variable = { name = bond_trust value <= 79 } }
 			add_country_modifier = { modifier = bond_trust_tier_60_79 duration = -1 }
 		}
 		else = {
@@ -121,7 +121,7 @@ country_event = {
 
 # Debug event to show current trust
 country_event = {
-	id = bond_market_debug_show_trust.1
+	id = bond_market_debug_show.1
 	title = bond_market_debug_show_title
 	desc = bond_market_debug_show_desc
 
@@ -134,7 +134,7 @@ country_event = {
 
 # Debug event to confirm trust change
 country_event = {
-	id = bond_market_debug_set_trust.1
+	id = bond_market_debug_set.1
 	title = bond_market_debug_set_title
 	desc = bond_market_debug_set_desc
 

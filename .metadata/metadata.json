@@ -1,0 +1,15 @@
+{
+  "name" : "Liberty, Progress, and Revolution - Bond Market",
+  "id" : "bond_market_lpr",
+  "version" : "0.0.1",
+  "supported_game_version" : "1.12.*",
+  "short_description" : "Drive the current of the era between Liberty, Progress, or Revolution with the Bond Market.",
+  "tags" : [
+    "Economy",
+    "Gameplay"
+  ],
+  "relationships" : [],
+  "game_custom_data" : {
+    "multiplayer_synchronized" : true
+  }
+}

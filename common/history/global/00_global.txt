@@ -1,4 +1,4 @@
-# ============================================================================
+﻿# ============================================================================
 # BOND MARKET GLOBAL HISTORY INITIALIZATION
 # ============================================================================
 # This file initializes the bond trust system at game start.
@@ -17,14 +17,11 @@ GLOBAL = {
 		}
 	}
 
-	# Add debug journal entry for player countries and debug mode
+	# Add debug journal entry for player countries
 	# This provides an in-game UI element showing current bond market status
 	every_country = {
 		limit = {
-			OR = {
-				is_player = yes
-				is_debug_mode = yes
-			}
+			is_player = yes
 		}
 		add_journal_entry = {
 			type = je_bond_market_debug

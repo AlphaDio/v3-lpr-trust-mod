@@ -27,6 +27,7 @@ Trust: 65 | Tier: High | Debt: 45% | Income: +2500
 In debug mode, you can access additional decisions in the Politics -> Decisions menu:
 
 - **"Bond Market: Show Trust"** - Displays a popup with detailed trust information
+- **"Bond Market: Add Bond Market Journal Entry"** - Adds the journal entry for ongoing monitoring
 - **"Bond Market: Set Trust to 10/60/95"** - Manually sets trust to specific values for testing
 
 ## Trust System Mechanics

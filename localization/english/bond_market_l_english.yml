@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 
 # Event localization
  bond_market_trust_update_title: "Bond Market Trust Update"
@@ -18,6 +18,8 @@ l_english:
  bond_market_debug_category: "Bond Market Debug"
  bond_market_show_trust: "Show Bond Trust"
  bond_market_show_trust_desc: "Display current bond trust level, tier, and economic status"
+ bond_market_add_journal_entry: "Add Bond Market Journal Entry"
+ bond_market_add_journal_entry_desc: "Add the Bond Market journal entry to track trust levels during gameplay"
  bond_market_set_trust_10: "Set Trust to 10 (Very Low)"
  bond_market_set_trust_10_desc: "Set bond trust to 10 for testing low trust effects"
  bond_market_set_trust_60: "Set Trust to 60 (Medium)"
@@ -40,3 +42,4 @@ l_english:
 # Journal entry localization
  je_bond_market_debug: "The Bond Market"
  je_bond_market_debug_status: "Trust: [GetPlayer.MakeScope.ScriptValue('bond_market_trust_value')|0]\nDebt: [GetPlayer.MakeScope.ScriptValue('bond_market_debt_percentage')|0]%\nIncome: [GetPlayer.MakeScope.ScriptValue('bond_market_net_income')|0]"
+ je_bond_market_debug_reason: "Monitoring bond market trust levels and economic indicators"

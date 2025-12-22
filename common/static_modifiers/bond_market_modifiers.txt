@@ -1,4 +1,4 @@
-# Bond Market Trust Tier Modifiers
+﻿# Bond Market Trust Tier Modifiers
 # These modifiers affect loan interest rates based on country bond trust
 # Lower trust = higher interest rates (penalty for risky borrowing)
 # Higher trust = lower interest rates (reward for good credit)

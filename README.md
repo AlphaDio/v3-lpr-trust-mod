@@ -9,7 +9,7 @@ The mod introduces a bond trust system that affects loan interest rates and cred
 - **Dynamic Trust System**: Monthly trust updates based on economic conditions
 - **Interest Rate Modifiers**: 5 trust tiers with varying loan interest rate effects
 - **Credit Capacity Effects**: Building cash reserves affected by trust levels
-- **Debug Tools**: Journal entry and decisions for monitoring and testing
+- **Debug Tools**: Journal entry and decisions for monitoring and testing (can be added mid-game)
 - **Enhanced Credit Limits**: Increased base credit and GDP-based credit multipliers
 
 ## Balancing Design Principles

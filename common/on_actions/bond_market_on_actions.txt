@@ -1,9 +1,9 @@
-# Bond Market On Actions
+﻿# Bond Market On Actions
 # This file contains hooks that trigger the monthly bond trust updates
 
 # Monthly pulse for bond trust system
 on_monthly_pulse_country = {
 	events = {
-		bond_market_trust.1  # Trigger trust update event for every country
+		bond_market_trust_update.1  # Trigger trust update event for every country
 	}
 }

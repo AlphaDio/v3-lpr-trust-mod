@@ -1,4 +1,4 @@
-# Bond Market Defines Tweaks
+﻿# Bond Market Defines Tweaks
 # This file contains global define changes to enhance the bond market system
 # These tweaks make credit more accessible and dynamic
 
