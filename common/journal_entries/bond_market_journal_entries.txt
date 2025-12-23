@@ -33,3 +33,32 @@ je_bond_market_debug = {
 		desc = je_bond_market_debug_status
 	}
 }
+
+# Journal entry for when country is in default
+je_bond_market_default = {
+	icon = "gfx/interface/icons/event_icons/event_bankruptcy.dds"
+
+	# Groups this entry under Economy in the journal UI
+	group = je_group_economy
+
+	# Show this entry when inactive
+	is_shown_when_inactive = {
+		is_player = yes
+	}
+
+	# Available when player is in default
+	possible = {
+		is_player = yes
+		has_country_flag = in_default
+	}
+
+	# Complete when no longer in default
+	complete = {
+		NOT = { has_country_flag = in_default }
+	}
+
+	# Display default status information
+	status_desc = {
+		desc = je_bond_market_default_status
+	}
+}

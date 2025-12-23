@@ -32,3 +32,8 @@ bond_trust_tier_very_high = {
 	country_loan_interest_rate_add = -0.03  # -3% interest rate
 	building_cash_reserves_mult = 0.2  # +20% cash reserves for all buildings
 }
+
+lpr_medium_radical_increase = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	state_radicals_from_political_movements_mult = 0.5
+}
