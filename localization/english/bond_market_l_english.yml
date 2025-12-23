@@ -7,7 +7,7 @@
 
 # Debug events
  bond_market_debug_show_title: "Bond Market Debug: Current Trust"
- bond_market_debug_show_desc: "Trust: [GetVariable('bond_trust')]\nTier: [GetVariable('bond_trust') <= 19 ? 'Very Low (0-19)' : [GetVariable('bond_trust') <= 39 ? 'Low (20-39)' : [GetVariable('bond_trust') <= 59 ? 'Medium (40-59)' : [GetVariable('bond_trust') <= 79 ? 'High (60-79)' : 'Very High (80-100)']]]]\nScaled Debt: [GetScaledDebt]"
+ bond_market_debug_show_desc: "Trust: [GetVariable('bond_trust')]\nTier: [GetVariable('bond_trust') <= 33 ? 'Low (0-33)' : [GetVariable('bond_trust') <= 66 ? 'Medium (34-66)' : 'High (67-100)']]\nScaled Debt: [GetScaledDebt]"
  bond_market_debug_show_option: "Understood"
 
  bond_market_debug_set_title: "Bond Market Debug: Trust Updated"
@@ -16,28 +16,25 @@
 
 # Decision localization
  bond_market_debug_category: "Bond Market Debug"
+ bond_market_debug_category_desc: "Debug tools for testing the bond market trust system"
  bond_market_show_trust: "Show Bond Trust"
  bond_market_show_trust_desc: "Display current bond trust level, tier, and economic status"
  bond_market_add_journal_entry: "Add Bond Market Journal Entry"
  bond_market_add_journal_entry_desc: "Add the Bond Market journal entry to track trust levels during gameplay"
- bond_market_set_trust_10: "Set Trust to 10 (Very Low)"
+ bond_market_set_trust_10: "Set Trust to 10 (Low)"
  bond_market_set_trust_10_desc: "Set bond trust to 10 for testing low trust effects"
- bond_market_set_trust_60: "Set Trust to 60 (Medium)"
- bond_market_set_trust_60_desc: "Set bond trust to 60 for testing medium trust effects"
- bond_market_set_trust_95: "Set Trust to 95 (Very High)"
+ bond_market_set_trust_60: "Set Trust to 50 (Medium)"
+ bond_market_set_trust_60_desc: "Set bond trust to 50 for testing medium trust effects"
+ bond_market_set_trust_95: "Set Trust to 95 (High)"
  bond_market_set_trust_95_desc: "Set bond trust to 95 for testing high trust effects"
 
 # Modifier localization
- bond_trust_tier_0_19: "Very Low Bond Trust"
- bond_trust_tier_0_19_desc: "Our poor credit history has led to very high borrowing costs"
- bond_trust_tier_20_39: "Low Bond Trust"
- bond_trust_tier_20_39_desc: "Our mediocre credit rating increases borrowing costs"
- bond_trust_tier_40_59: "Medium Bond Trust"
- bond_trust_tier_40_59_desc: "Our average credit standing has a minor impact on borrowing costs"
- bond_trust_tier_60_79: "High Bond Trust"
- bond_trust_tier_60_79_desc: "Our good credit rating provides some borrowing cost relief"
- bond_trust_tier_80_100: "Very High Bond Trust"
- bond_trust_tier_80_100_desc: "Our excellent credit history significantly reduces borrowing costs"
+ bond_trust_tier_low: "Low Bond Trust"
+ bond_trust_tier_low_desc: "Our poor credit history has led to higher borrowing costs and reduced credit capacity"
+ bond_trust_tier_medium: "Medium Bond Trust"
+ bond_trust_tier_medium_desc: "Our average credit standing has no special impact on borrowing costs"
+ bond_trust_tier_high: "High Bond Trust"
+ bond_trust_tier_high_desc: "Our good credit rating provides borrowing cost relief and increased credit capacity"
 
 # Journal entry localization
  je_bond_market_debug: "The Bond Market"

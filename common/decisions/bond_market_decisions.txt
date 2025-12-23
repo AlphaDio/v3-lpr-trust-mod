@@ -3,16 +3,16 @@
 
 # Category for bond market debug decisions
 bond_market_debug_category = {
-		icon = debug_mode
+		icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 
 		# Decision to show current bond trust
 		bond_market_show_trust = {
-			icon = debug_mode
+			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
-				is_debug_mode = yes
+				always = yes
 			}
 			visible = {
-				is_debug_mode = yes
+				always = yes
 			}
 
 			# Initialize trust if missing
@@ -29,12 +29,12 @@ bond_market_debug_category = {
 
 		# Decision to add the bond market journal entry
 		bond_market_add_journal_entry = {
-			icon = debug_mode
+			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
-				is_debug_mode = yes
+				always = yes
 			}
 			visible = {
-				is_debug_mode = yes
+				always = yes
 			}
 
 			effect = {
@@ -46,12 +46,12 @@ bond_market_debug_category = {
 
 		# Decision to set trust to 10 (very low)
 		bond_market_set_trust_10 = {
-			icon = debug_mode
+			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
-				is_debug_mode = yes
+				always = yes
 			}
 			visible = {
-				is_debug_mode = yes
+				always = yes
 			}
 
 			effect = {
@@ -60,30 +60,30 @@ bond_market_debug_category = {
 			}
 		}
 
-		# Decision to set trust to 60 (medium)
+		# Decision to set trust to 50 (medium)
 		bond_market_set_trust_60 = {
-			icon = debug_mode
+			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
-				is_debug_mode = yes
+				always = yes
 			}
 			visible = {
-				is_debug_mode = yes
+				always = yes
 			}
 
 			effect = {
-				set_country_variable = { name = bond_trust value = 60 }
+				set_country_variable = { name = bond_trust value = 50 }
 				country_event = bond_market_debug_set.1
 			}
 		}
 
 		# Decision to set trust to 95 (very high)
 		bond_market_set_trust_95 = {
-			icon = debug_mode
+			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
-				is_debug_mode = yes
+				always = yes
 			}
 			visible = {
-				is_debug_mode = yes
+				always = yes
 			}
 
 			effect = {
@@ -91,5 +91,4 @@ bond_market_debug_category = {
 				country_event = bond_market_debug_set.1
 			}
 		}
-	}
 }
