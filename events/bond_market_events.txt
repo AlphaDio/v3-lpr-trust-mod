@@ -7,6 +7,9 @@ bond_market_events.1 = {
 	type = country_event
 	placement = root
 
+	hidden = yes
+	major = no
+
 	title = bond_market_trust_update_title
 	desc = bond_market_trust_update_desc
 	flavor = bond_market_trust_update_flavor
@@ -14,9 +17,6 @@ bond_market_events.1 = {
 	event_image = {
 		video = "unspecific_world_fair"
 	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	duration = 2
 
@@ -153,18 +153,18 @@ bond_market_events.2 = {
 	}
 
 	immediate = {
-		# Determine income bonus based on trust tier
+		# Determine income bonus duration based on trust tier
 		if = {
 			limit = { var:bond_trust >= 80 }  # Very High Trust
-			add_treasury = 500
+			add_modifier = { name = bond_market_treasury_boost days = 360 }
 		}
 		else_if = {
 			limit = { var:bond_trust >= 60 }  # High Trust
-			add_treasury = 300
+			add_modifier = { name = bond_market_treasury_boost days = 240 }
 		}
 		else_if = {
 			limit = { var:bond_trust >= 40 }  # Medium Trust
-			add_treasury = 150
+			add_modifier = { name = bond_market_treasury_boost days = 180 }
 		}
 	}
 
@@ -189,22 +189,38 @@ bond_market_events.3 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
-	duration = 3
+	duration = 2
 
 	trigger = {
 		var:bond_trust < 50
 	}
 
 	immediate = {
-		# Increase radicalism among capitalists
-		add_modifier = {
-			name = lpr_medium_radical_increase
-			months = 3
+		add_loyalists = {
+			value = -0.01
+			pop_type = capitalists
 		}
 	}
 
+	# Accept their demands
 	option = {
-		name = bond_market_capitalist_radicalism_option
+		name = bond_market_capitalist_radicalism_option_accept
+		desc = bond_market_capitalist_radicalism_option_accept_desc
+		add_loyalists = {
+			value = 0.01
+			strata = higher
+		}
+	}
+
+	# Reject their demands
+	option = {
+		name = bond_market_capitalist_radicalism_option_reject
+		desc = bond_market_capitalist_radicalism_option_reject_desc
+		# Gain loyalists among lower stratas
+		add_loyalists = {
+			value = 0.025
+			strata = ig_trade_unions
+		}
 	}
 }
 
@@ -231,15 +247,30 @@ bond_market_events.4 = {
 	}
 
 	immediate = {
-		# Increase radicalism among trade unions (workers)
-		add_modifier = {
-			name = lpr_medium_radical_increase
-			months = 2
+		add_loyalists = {
+			value = -0.01
+			interest_group = ig_trade_unions
 		}
 	}
 
+	# Accept union demands
 	option = {
-		name = bond_market_trade_union_radicalism_option
+		name = bond_market_trade_union_radicalism_option_accept
+		desc = bond_market_trade_union_radicalism_option_accept_desc
+		add_loyalists = {
+			value = 0.025
+			strata = lower
+		}
+	}
+
+	# Reject union demands
+	option = {
+		name = bond_market_trade_union_radicalism_option_reject
+		desc = bond_market_trade_union_radicalism_option_reject_desc
+		add_loyalists = {
+			value = 0.015
+			strata = higher
+		}
 	}
 }
 
@@ -259,9 +290,9 @@ bond_market_events.5 = {
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
-	duration = 5
+	duration = 3
 
-	# Only trigger when bond trust is above 30 to make the sacrifice meaningful
+	# Only trigger when bond trust is above 30 to make the cost meaningful
 	trigger = {
 		var:bond_trust >= 30
 	}
@@ -272,7 +303,7 @@ bond_market_events.5 = {
 			name = bond_trust
 			add = -10
 		}
-		add_treasury = 500
+		add_modifier = { name = bond_market_treasury_boost days = 720 }
 	}
 
 	option = {

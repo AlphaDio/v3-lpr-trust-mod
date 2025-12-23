@@ -37,3 +37,9 @@ lpr_medium_radical_increase = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
 	state_radicals_from_political_movements_mult = 0.5
 }
+
+# Treasury income boost for bond market rewards
+bond_market_treasury_boost = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_gold_positive.dds"
+	country_tax_efficiency_mult = 0.2  # +20% tax efficiency = increased treasury income
+}

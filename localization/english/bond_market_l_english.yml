@@ -43,24 +43,30 @@
 
 # New bond market events
  bond_market_income_title: "Bond Market Confidence Boost"
- bond_market_income_desc: "Our strong bond market standing has attracted international investors, providing a welcome boost to our treasury."
+ bond_market_income_desc: "Our strong bond market standing has attracted international investors, providing a sustained boost to our tax revenue for the coming months."
  bond_market_income_flavor: "Foreign capital flows into our prosperous economy."
  bond_market_income_option: "Excellent news!"
 
  bond_market_capitalist_radicalism_title: "Capitalist Discontent"
  bond_market_capitalist_radicalism_desc: "The poor state of our national credit has shaken confidence among our capitalist class. Fearing economic instability, many are becoming increasingly radical in their demands for change."
  bond_market_capitalist_radicalism_flavor: "Economic uncertainty breeds political extremism."
- bond_market_capitalist_radicalism_option: "This could be problematic"
+ bond_market_capitalist_radicalism_option_accept: "Accept their demands"
+ bond_market_capitalist_radicalism_option_accept_desc: "This could be problematic"
+ bond_market_capitalist_radicalism_option_reject: "Reject their demands"
+ bond_market_capitalist_radicalism_option_reject_desc: "To hell with them"
 
  bond_market_trade_union_radicalism_title: "Worker Unrest in Economic Boom"
  bond_market_trade_union_radicalism_desc: "Despite our excellent economic standing, trade unions are growing increasingly radical. Workers feel that the benefits of our success are not being fairly distributed."
  bond_market_trade_union_radicalism_flavor: "Prosperity without equity breeds discontent."
- bond_market_trade_union_radicalism_option: "We must address these concerns"
+ bond_market_trade_union_radicalism_option_accept: "Address their concerns"
+ bond_market_trade_union_radicalism_option_accept_desc: "Implement workers' rights reforms"
+ bond_market_trade_union_radicalism_option_reject: "Dismiss their demands"
+ bond_market_trade_union_radicalism_option_reject_desc: "The workers should be grateful for the economic success"
 
  bond_market_industrialist_loyalty_title: "Industrialist Investment Opportunity"
  bond_market_industrialist_loyalty_desc: "Our industrial leaders are offering substantial investment capital in exchange for accepting a temporary hit to our bond market reputation. They argue that domestic industrial priorities should take precedence over international financial perceptions."
  bond_market_industrialist_loyalty_flavor: "Domestic industry demands political priority over global finance."
- bond_market_industrialist_loyalty_accept: "Accept the industrialists' offer (-10 Bond Trust, +500 Treasury)"
+ bond_market_industrialist_loyalty_accept: "Accept the industrialists' offer (-10 Bond Trust, +20% Tax Efficiency for 24 months)"
  bond_market_industrialist_loyalty_decline: "Maintain our current financial strategy"
 
 # Journal entry localization
