@@ -12,8 +12,7 @@ GLOBAL = {
 	# Starts at 60 (medium trust level) for balanced gameplay
 	every_country = {
 		set_variable = {
-			name = bond_trust
-			value = 60
+			bond_trust = 60
 		}
 	}
 
@@ -24,7 +23,7 @@ GLOBAL = {
 			is_player = yes
 		}
 		add_journal_entry = {
-			type = je_bond_market_debug
+			id = je_bond_market_debug
 		}
 	}
 }

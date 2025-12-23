@@ -3,10 +3,9 @@
 
 # Category for bond market debug decisions
 bond_market_debug_category = {
-		icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 
-		# Decision to show current bond trust
-		bond_market_show_trust = {
+	# Decision to show current bond trust
+	bond_market_show_trust = {
 			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
 				always = yes
@@ -19,9 +18,9 @@ bond_market_debug_category = {
 			effect = {
 				if = {
 					limit = {
-						NOT = { has_country_variable = bond_trust }
+						NOT = { has_variable = bond_trust }
 					}
-					set_country_variable = { name = bond_trust value = 60 }
+					set_variable = { bond_trust = 60 }
 				}
 				country_event = bond_market_debug_show.1
 			}
@@ -39,7 +38,7 @@ bond_market_debug_category = {
 
 			effect = {
 				add_journal_entry = {
-					type = je_bond_market_debug
+					id = je_bond_market_debug
 				}
 			}
 		}
@@ -55,13 +54,13 @@ bond_market_debug_category = {
 			}
 
 			effect = {
-				set_country_variable = { name = bond_trust value = 10 }
+				set_variable = { bond_trust = 10 }
 				country_event = bond_market_debug_set.1
 			}
 		}
 
 		# Decision to set trust to 50 (medium)
-		bond_market_set_trust_60 = {
+		bond_market_set_trust_50 = {
 			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
 			available = {
 				always = yes
@@ -71,8 +70,8 @@ bond_market_debug_category = {
 			}
 
 			effect = {
-				set_country_variable = { name = bond_trust value = 50 }
-				country_event = bond_market_debug_set.1
+				set_variable = { bond_trust = 50 }
+				country_event = bond_market_events.bond_market_debug_set.1
 			}
 		}
 
@@ -87,7 +86,7 @@ bond_market_debug_category = {
 			}
 
 			effect = {
-				set_country_variable = { name = bond_trust value = 95 }
+				set_variable = { bond_trust = 95 }
 				country_event = bond_market_debug_set.1
 			}
 		}
