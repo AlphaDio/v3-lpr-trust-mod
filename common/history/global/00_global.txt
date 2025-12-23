@@ -12,18 +12,9 @@ GLOBAL = {
 	# Starts at 60 (medium trust level) for balanced gameplay
 	every_country = {
 		set_variable = {
-			bond_trust = 60
+			name = bond_trust
+			value = 60
 		}
 	}
 
-	# Add debug journal entry for player countries
-	# This provides an in-game UI element showing current bond market status
-	every_country = {
-		limit = {
-			is_player = yes
-		}
-		add_journal_entry = {
-			id = je_bond_market_debug
-		}
-	}
 }

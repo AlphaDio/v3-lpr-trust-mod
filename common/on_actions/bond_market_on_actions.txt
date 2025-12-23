@@ -4,6 +4,30 @@
 # Monthly pulse for bond trust system
 on_monthly_pulse_country = {
 	events = {
-		bond_market_trust_update.1  # Trigger trust update event for every country
+		bond_market_events.1  # Trigger trust update event for every country
+	}
+
+	# Bond market income bonus - 25% chance for countries with medium+ trust
+	random_events = {
+		75 = 0  # 75% chance of no event
+		25 = bond_market_events.2  # 25% chance of income bonus
+	}
+
+	# Capitalist radicalism - 5% chance when trust < 50
+	random_events = {
+		95 = 0  # 95% chance of no event
+		5 = bond_market_events.3  # 5% chance of capitalist unrest
+	}
+
+	# Trade union radicalism - 8% chance when trust > 70
+	random_events = {
+		92 = 0  # 92% chance of no event
+		8 = bond_market_events.4  # 8% chance of union unrest
+	}
+
+	# Industrialist loyalty choice - 3% chance when trust >= 30
+	random_events = {
+		97 = 0  # 97% chance of no event
+		3 = bond_market_events.5  # 3% chance of industrialist loyalty opportunity
 	}
 }

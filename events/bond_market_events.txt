@@ -3,12 +3,22 @@
 
 namespace = bond_market_events
 
-bond_market_trust_update.1 = {
+bond_market_events.1 = {
 	type = country_event
 	placement = root
 
 	title = bond_market_trust_update_title
 	desc = bond_market_trust_update_desc
+	flavor = bond_market_trust_update_flavor
+
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 2
 
 	# This event runs monthly for every country to update bond trust
 
@@ -18,64 +28,52 @@ bond_market_trust_update.1 = {
 			limit = {
 				NOT = { has_variable = bond_trust }
 			}
-			set_variable = { bond_trust = 50 }
+			set_variable = { name = bond_trust value = 50 }
 		}
 
 		# Calculate trust change based on economic conditions
-		set_temp_variable = { trust_change = 0 }
-
-		# Penalty for being bankrupt (-20)
+		# High debt penalty (≥70%)
 		if = {
-			limit = { is_bankrupt = yes }
-			set_temp_variable = { trust_change = -20 }
+			limit = { scaled_debt >= 0.7 }
+			change_variable = { name = bond_trust add = -10 }
 		}
-		# High debt penalty (≥90%) - only if not bankrupt
+		# Medium debt penalty (≥70%) - only if not in default
 		else_if = {
-			limit = { check_variable = { scaled_debt >= 0.9 } }
-			set_temp_variable = { trust_change = -5 }
+			limit = { scaled_debt >= 0.5 }
+			change_variable = { name = bond_trust add = -5 }
 		}
-		# Medium debt penalty (≥70%) - only if not bankrupt
+		# Low debt penalty (≥50%) - only if not in default
 		else_if = {
-			limit = { check_variable = { scaled_debt >= 0.7 } }
-			set_temp_variable = { trust_change = -3 }
-		}
-		# Low debt penalty (≥50%) - only if not bankrupt
-		else_if = {
-			limit = { check_variable = { scaled_debt >= 0.5 } }
-			set_temp_variable = { trust_change = -1 }
+			limit = { scaled_debt >= 0.2 }
+			change_variable = { name = bond_trust add = -3 }
 		}
 		# Bonus for low debt and surplus (≤20% debt + non-deficit)
 		else_if = {
 			limit = {
-				check_variable = { scaled_debt <= 0.2 }
-				check_variable = { net_fixed_income >= 0 }
+				scaled_debt <= 0.2
+				net_fixed_income >= 0
 			}
-			set_temp_variable = { trust_change = 2 }
+			change_variable = { name = bond_trust add = 2 }
 		}
 
 		# Small drift toward 60 (neutral level)
 		if = {
-			limit = { check_variable = { bond_trust < 60 } }
-			change_temp_variable = { trust_change = 1 }
+			limit = { var:bond_trust < 60 }
+			change_variable = { name = bond_trust add = 1 }
 		}
 		else_if = {
-			limit = { check_variable = { bond_trust > 60 } }
-			change_temp_variable = { trust_change = -1 }
-		}
-
-		# Apply the trust change
-		change_variable = {
-			bond_trust = temp:trust_change
+			limit = { var:bond_trust > 60 }
+			change_variable = { name = bond_trust add = -1 }
 		}
 
 		# Clamp trust between 0 and 100
 		if = {
-			limit = { check_variable = { bond_trust < 0 } }
-			set_variable = { bond_trust = 0 }
+			limit = { var:bond_trust < 0 }
+			set_variable = { name = bond_trust value = 0 }
 		}
 		if = {
-			limit = { check_variable = { bond_trust > 100 } }
-			set_variable = { bond_trust = 100 }
+			limit = { var:bond_trust > 100 }
+			set_variable = { name = bond_trust value = 100 }
 		}
 
 		# Remove old tier modifiers
@@ -87,19 +85,19 @@ bond_market_trust_update.1 = {
 
 		# Apply new tier modifier based on current trust
 		if = {
-			limit = { check_variable = { bond_trust <= 19 } }
+			limit = { var:bond_trust <= 19 }
 			add_modifier = { name = bond_trust_tier_very_low days = -1 }
 		}
 		else_if = {
-			limit = { check_variable = { bond_trust <= 39 } }
+			limit = { var:bond_trust <= 39 }
 			add_modifier = { name = bond_trust_tier_low days = -1 }
 		}
 		else_if = {
-			limit = { check_variable = { bond_trust <= 59 } }
+			limit = { var:bond_trust <= 59 }
 			add_modifier = { name = bond_trust_tier_medium days = -1 }
 		}
 		else_if = {
-			limit = { check_variable = { bond_trust <= 79 } }
+			limit = { var:bond_trust <= 79 }
 			add_modifier = { name = bond_trust_tier_high days = -1 }
 		}
 		else = {
@@ -113,28 +111,154 @@ bond_market_trust_update.1 = {
 	}
 }
 
-# Debug event to show current trust
-bond_market_debug_show.1 = {
+# Bond market income event - provides budget bonus based on trust tier
+bond_market_events.2 = {
 	type = country_event
 	placement = root
 
-	title = bond_market_debug_show_title
-	desc = bond_market_debug_show_desc
+	title = bond_market_income_title
+	desc = bond_market_income_desc
+	flavor = bond_market_income_flavor
+
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 1
+
+	trigger = {
+		var:bond_trust >= 40
+	}
+
+	immediate = {
+		# Determine income bonus based on trust tier
+		if = {
+			limit = { var:bond_trust >= 80 }  # Very High Trust
+			add_treasury = 500
+		}
+		else_if = {
+			limit = { var:bond_trust >= 60 }  # High Trust
+			add_treasury = 300
+		}
+		else_if = {
+			limit = { var:bond_trust >= 40 }  # Medium Trust
+			add_treasury = 150
+		}
+	}
 
 	option = {
-		name = bond_market_debug_show_option
+		name = bond_market_income_option
 	}
 }
 
-# Debug event to confirm trust change
-bond_market_debug_set.1 = {
+# Capitalist radicalism event - triggers when trust is low
+bond_market_events.3 = {
 	type = country_event
 	placement = root
 
-	title = bond_market_debug_set_title
-	desc = bond_market_debug_set_desc
+	title = bond_market_capitalist_radicalism_title
+	desc = bond_market_capitalist_radicalism_desc
+	flavor = bond_market_capitalist_radicalism_flavor
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 3
+
+	trigger = {
+		var:bond_trust < 50
+	}
+
+	immediate = {
+		# Increase radicalism among capitalists
+		add_modifier = {
+			name = lpr_medium_radical_increase
+			months = 3
+		}
+	}
 
 	option = {
-		name = bond_market_debug_set_option
+		name = bond_market_capitalist_radicalism_option
+	}
+}
+
+# Trade union radicalism event - triggers when trust is high
+bond_market_events.4 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_trade_union_radicalism_title
+	desc = bond_market_trade_union_radicalism_desc
+	flavor = bond_market_trade_union_radicalism_flavor
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 2
+
+	trigger = {
+		var:bond_trust > 70
+	}
+
+	immediate = {
+		# Increase radicalism among trade unions (workers)
+		add_modifier = {
+			name = lpr_medium_radical_increase
+			months = 2
+		}
+	}
+
+	option = {
+		name = bond_market_trade_union_radicalism_option
+	}
+}
+
+# Industrialist loyalty event - sacrifice bond trust for industrialist support
+bond_market_events.5 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_industrialist_loyalty_title
+	desc = bond_market_industrialist_loyalty_desc
+	flavor = bond_market_industrialist_loyalty_flavor
+
+	event_image = {
+		video = "unspecific_world_fair"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 5
+
+	# Only trigger when bond trust is above 30 to make the sacrifice meaningful
+	trigger = {
+		var:bond_trust >= 30
+	}
+
+	option = {
+		name = bond_market_industrialist_loyalty_accept
+		change_variable = {
+			name = bond_trust
+			add = -10
+		}
+		add_loyalists = {
+			value = industrialists
+		}
+	}
+
+	option = {
+		name = bond_market_industrialist_loyalty_decline
 	}
 }

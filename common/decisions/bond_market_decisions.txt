@@ -1,93 +1,78 @@
 # Bond Market Debug Decisions
 # Debug decisions for testing the bond trust system
 
-# Category for bond market debug decisions
-bond_market_debug_category = {
-
-	# Decision to show current bond trust
-	bond_market_show_trust = {
-			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
-			available = {
-				always = yes
-			}
-			visible = {
-				always = yes
-			}
-
-			# Initialize trust if missing
-			effect = {
-				if = {
-					limit = {
-						NOT = { has_variable = bond_trust }
-					}
-					set_variable = { bond_trust = 60 }
+bond_market_show_trust = {
+		icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
+		available = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_variable = bond_trust }
 				}
-				country_event = bond_market_debug_show.1
+				set_variable = { name = bond_trust value = 60 }
+			}
+			country_event = bond_market_events.2
+		}
+}
+
+bond_market_add_journal_entry = {
+		icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
+		available = {
+			always = yes
+		}
+		visible = {
+			always = yes
+		}
+		effect = {
+			add_journal_entry = {
+				type = je_bond_market_debug
 			}
 		}
+}
 
-		# Decision to add the bond market journal entry
-		bond_market_add_journal_entry = {
-			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
-			available = {
-				always = yes
-			}
-			visible = {
-				always = yes
-			}
-
-			effect = {
-				add_journal_entry = {
-					id = je_bond_market_debug
-				}
-			}
+bond_market_set_trust_10 = {
+		icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
+		available = {
+			always = yes
 		}
-
-		# Decision to set trust to 10 (very low)
-		bond_market_set_trust_10 = {
-			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
-			available = {
-				always = yes
-			}
-			visible = {
-				always = yes
-			}
-
-			effect = {
-				set_variable = { bond_trust = 10 }
-				country_event = bond_market_debug_set.1
-			}
+		visible = {
+			always = yes
 		}
-
-		# Decision to set trust to 50 (medium)
-		bond_market_set_trust_50 = {
-			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
-			available = {
-				always = yes
-			}
-			visible = {
-				always = yes
-			}
-
-			effect = {
-				set_variable = { bond_trust = 50 }
-				country_event = bond_market_events.bond_market_debug_set.1
-			}
+		effect = {
+			set_variable = { name = bond_trust value = 10 }
+			country_event = bond_market_events.3
 		}
+}
 
-		# Decision to set trust to 95 (very high)
-		bond_market_set_trust_95 = {
-			icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
-			available = {
-				always = yes
-			}
-			visible = {
-				always = yes
-			}
-
-			effect = {
-				set_variable = { bond_trust = 95 }
-				country_event = bond_market_debug_set.1
-			}
+bond_market_set_trust_50 = {
+		icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
+		available = {
+			always = yes
 		}
+		visible = {
+			always = yes
+		}
+		effect = {
+			set_variable = { name = bond_trust value = 50 }
+			country_event = bond_market_events.3
+		}
+}
+
+bond_market_set_trust_95 = {
+	icon = "gfx/interface/icons/decision_icons/generic_decision.dds"
+	available = {
+		always = yes
+	}
+	visible = {
+		always = yes
+	}
+	effect = {
+		set_variable = { name = bond_trust value = 95 }
+		country_event = bond_market_events.3
+	}
 }

@@ -1,0 +1,34 @@
+# ============================================================================
+# BOND MARKET DEBUG EVENTS
+# ============================================================================
+# These events were originally designed for debugging the bond market system
+# but are kept separate for organizational purposes.
+# ============================================================================
+
+namespace = bond_market_events
+
+# Debug event to show current trust (no longer used)
+bond_market_events.2 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_debug_show_title
+	desc = bond_market_debug_show_desc
+
+	option = {
+		name = bond_market_debug_show_option
+	}
+}
+
+# Debug event to confirm trust change (no longer used)
+bond_market_events.3 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_debug_set_title
+	desc = bond_market_debug_set_desc
+
+	option = {
+		name = bond_market_debug_set_option
+	}
+}

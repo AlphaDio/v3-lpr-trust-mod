@@ -2,16 +2,17 @@
 
 # Event localization
  bond_market_trust_update_title: "Bond Market Trust Update"
- bond_market_trust_update_desc: "The international bond market has reassessed our country's creditworthiness. Trust: [GetVariable('bond_trust')]"
+ bond_market_trust_update_desc: "The international bond market has reassessed our country's creditworthiness based on our economic performance."
+ bond_market_trust_update_flavor: "Global financial markets react to our fiscal policies."
  bond_market_trust_update_option: "Continue"
 
-# Debug events
+# Debug events (not currently used)
  bond_market_debug_show_title: "Bond Market Debug: Current Trust"
- bond_market_debug_show_desc: "Trust: [GetVariable('bond_trust')]\nTier: [GetVariable('bond_trust') <= 19 ? 'Very Low (0-19)' : [GetVariable('bond_trust') <= 39 ? 'Low (20-39)' : [GetVariable('bond_trust') <= 59 ? 'Medium (40-59)' : [GetVariable('bond_trust') <= 79 ? 'High (60-79)' : 'Very High (80-100)']]]]\nScaled Debt: [GetScaledDebt]"
+ bond_market_debug_show_desc: "Trust: [GetPlayer.MakeScope.ScriptValue('bond_market_trust_value')|0]\nDebt: [GetPlayer.MakeScope.ScriptValue('bond_market_debt_percentage')|0]%\nIncome: [GetPlayer.MakeScope.ScriptValue('bond_market_net_income')|0]"
  bond_market_debug_show_option: "Understood"
 
  bond_market_debug_set_title: "Bond Market Debug: Trust Updated"
- bond_market_debug_set_desc: "Bond trust has been set to: [GetVariable('bond_trust')]"
+ bond_market_debug_set_desc: "Bond trust has been updated."
  bond_market_debug_set_option: "Continue"
 
 # Decision localization
@@ -39,6 +40,28 @@
  bond_trust_tier_high_desc: "Our good credit rating provides borrowing cost relief and increased credit capacity"
  bond_trust_tier_very_high: "Very High Bond Trust"
  bond_trust_tier_very_high_desc: "Our excellent credit rating provides significant borrowing cost relief and greatly increased credit capacity"
+
+# New bond market events
+ bond_market_income_title: "Bond Market Confidence Boost"
+ bond_market_income_desc: "Our strong bond market standing has attracted international investors, providing a welcome boost to our treasury."
+ bond_market_income_flavor: "Foreign capital flows into our prosperous economy."
+ bond_market_income_option: "Excellent news!"
+
+ bond_market_capitalist_radicalism_title: "Capitalist Discontent"
+ bond_market_capitalist_radicalism_desc: "The poor state of our national credit has shaken confidence among our capitalist class. Fearing economic instability, many are becoming increasingly radical in their demands for change."
+ bond_market_capitalist_radicalism_flavor: "Economic uncertainty breeds political extremism."
+ bond_market_capitalist_radicalism_option: "This could be problematic"
+
+ bond_market_trade_union_radicalism_title: "Worker Unrest in Economic Boom"
+ bond_market_trade_union_radicalism_desc: "Despite our excellent economic standing, trade unions are growing increasingly radical. Workers feel that the benefits of our success are not being fairly distributed."
+ bond_market_trade_union_radicalism_flavor: "Prosperity without equity breeds discontent."
+ bond_market_trade_union_radicalism_option: "We must address these concerns"
+
+ bond_market_industrialist_loyalty_title: "Industrialist Loyalty Opportunity"
+ bond_market_industrialist_loyalty_desc: "Our industrial leaders are offering increased political support in exchange for accepting a temporary hit to our bond market reputation. They argue that domestic industrial priorities should take precedence over international financial perceptions."
+ bond_market_industrialist_loyalty_flavor: "Domestic industry demands political priority over global finance."
+ bond_market_industrialist_loyalty_accept: "Accept the industrialists' offer (-10 Bond Trust, +Industrialist loyalists)"
+ bond_market_industrialist_loyalty_decline: "Maintain our current financial strategy"
 
 # Journal entry localization
  je_bond_market_debug: "The Bond Market"

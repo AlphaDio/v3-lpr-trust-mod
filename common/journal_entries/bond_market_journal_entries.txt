@@ -13,12 +13,12 @@ je_bond_market_debug = {
 	# Groups this entry under Internal Affairs in the journal UI
 	group = je_group_internal_affairs
 
-	# Show this entry for player countries only
+	# Always show this entry for player countries
 	is_shown_when_inactive = {
 		is_player = yes
 	}
 
-	# Available to player countries only
+	# Always available to player countries
 	possible = {
 		is_player = yes
 	}
