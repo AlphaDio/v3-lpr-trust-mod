@@ -149,22 +149,22 @@ bond_market_events.2 = {
 	duration = 1
 
 	trigger = {
-		var:bond_trust >= 40
+		var:bond_trust >= 30
 	}
 
 	immediate = {
 		# Determine income bonus duration based on trust tier
 		if = {
-			limit = { var:bond_trust >= 80 }  # Very High Trust
-			add_modifier = { name = bond_market_treasury_boost days = 360 }
+			limit = { var:bond_trust >= 70 }  # Very High Trust
+			add_modifier = { name = small_bond_market_treasury_boost days = 240 }
 		}
 		else_if = {
-			limit = { var:bond_trust >= 60 }  # High Trust
-			add_modifier = { name = bond_market_treasury_boost days = 240 }
+			limit = { var:bond_trust >= 50 }  # High Trust
+			add_modifier = { name = small_bond_market_treasury_boost days = 180 }
 		}
 		else_if = {
-			limit = { var:bond_trust >= 40 }  # Medium Trust
-			add_modifier = { name = bond_market_treasury_boost days = 180 }
+			limit = { var:bond_trust >= 30 }  # Medium Trust
+			add_modifier = { name = small_bond_market_treasury_boost days = 90 }
 		}
 	}
 
@@ -268,7 +268,7 @@ bond_market_events.4 = {
 		name = bond_market_trade_union_radicalism_option_reject
 		desc = bond_market_trade_union_radicalism_option_reject_desc
 		add_loyalists = {
-			value = 0.015
+			value = 0.01
 			strata = higher
 		}
 	}
@@ -303,10 +303,14 @@ bond_market_events.5 = {
 			name = bond_trust
 			add = -10
 		}
-		add_modifier = { name = bond_market_treasury_boost days = 720 }
+		add_modifier = { name = small_bond_market_treasury_boost days = 360 }
 	}
 
 	option = {
 		name = bond_market_industrialist_loyalty_decline
+		add_loyalists = {
+			value = 0.01
+			interest_group = ig_industrialists
+		}
 	}
 }

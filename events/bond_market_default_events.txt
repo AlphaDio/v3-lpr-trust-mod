@@ -1,0 +1,67 @@
+# ============================================================================
+# BOND MARKET DEFAULT EVENTS
+# ============================================================================
+# Events that trigger when countries are in sovereign default.
+# These provide recovery choices and crisis management options.
+# ============================================================================
+
+namespace = bond_market_events
+
+# Default recovery choice - weekly event for countries in default
+bond_market_events.6 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_default_recovery_title
+	desc = bond_market_default_recovery_desc
+	flavor = bond_market_default_recovery_flavor
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_bankruptcy.dds"
+
+	duration = 7
+
+	trigger = {
+		has_country_flag = in_default
+	}
+
+	option = {
+		name = bond_market_default_recovery_industrialist
+		desc = bond_market_default_recovery_industrialist_desc
+		# Boost industrialists, hurt all others, gain significant bond trust
+		add_loyalists = {
+			value = 0.2
+			strata = higher  # Boost industrialists (higher strata)
+		}
+		add_loyalists = {
+			value = -0.1
+			strata = middle  # Hurt other interest groups
+		}
+		add_loyalists = {
+			value = -0.1
+			strata = lower  # Hurt working classes too
+		}
+		change_variable = {
+			name = bond_trust
+			add = 30
+		}
+	}
+
+	option = {
+		name = bond_market_default_recovery_conservative
+		desc = bond_market_default_recovery_conservative_desc
+		# Small bond trust boost but hurt industrialists
+		change_variable = {
+			name = bond_trust
+			add = 10
+		}
+		add_loyalists = {
+			value = -0.15
+			strata = higher  # Hurt industrialists
+		}
+	}
+}

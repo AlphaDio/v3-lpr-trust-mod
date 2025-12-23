@@ -76,3 +76,11 @@
 
  je_bond_market_default: "A State of Default"
  je_bond_market_default_status: "Our nation is currently in a state of sovereign default. This severely damages our international credit reputation and limits our ability to borrow on favorable terms. We must work to restore confidence in our economy and repay our debts."
+
+ bond_market_default_recovery_title: "Default Recovery Strategy"
+ bond_market_default_recovery_desc: "As we struggle with sovereign default, our political factions are offering different paths to recovery. Industrialists propose aggressive economic restructuring that would prioritize their interests, while conservatives advocate for measured reforms that maintain broader political balance."
+ bond_market_default_recovery_flavor: "Political factions vie for control of economic recovery."
+ bond_market_default_recovery_industrialist: "Embrace Industrialist-Led Recovery"
+ bond_market_default_recovery_industrialist_desc: "Industrialists gain significant influence while other groups suffer. Gain 30 bond trust."
+ bond_market_default_recovery_conservative: "Pursue Balanced Recovery"
+ bond_market_default_recovery_conservative_desc: "Maintain political balance but disappoint industrialists. Gain 10 bond trust."

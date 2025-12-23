@@ -61,4 +61,12 @@ je_bond_market_default = {
 	status_desc = {
 		desc = je_bond_market_default_status
 	}
+
+	# Weekly pulse to trigger recovery choices
+	on_weekly_pulse = {
+		random_events = {
+			90 = 0  # 90% chance of no event
+			10 = bond_market_events.6  # 10% chance of default recovery choice
+		}
+	}
 }
