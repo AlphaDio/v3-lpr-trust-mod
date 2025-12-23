@@ -253,9 +253,7 @@ bond_market_events.5 = {
 			name = bond_trust
 			add = -10
 		}
-		add_loyalists = {
-			value = industrialists
-		}
+		add_treasury = 500
 	}
 
 	option = {
