@@ -8,7 +8,7 @@
 namespace = bond_market_events
 
 # Debug event to show current trust (no longer used)
-bond_market_events.2 = {
+bond_market_debug_events.1 = {
 	type = country_event
 	placement = root
 
@@ -21,7 +21,7 @@ bond_market_events.2 = {
 }
 
 # Debug event to confirm trust change (no longer used)
-bond_market_events.3 = {
+bond_market_debug_events.2 = {
 	type = country_event
 	placement = root
 

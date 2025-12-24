@@ -21,7 +21,7 @@ bond_market_events.6 = {
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	icon = "gfx/interface/icons/event_icons/event_bankruptcy.dds"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
 
 	duration = 7
 
@@ -31,7 +31,6 @@ bond_market_events.6 = {
 
 	option = {
 		name = bond_market_default_recovery_industrialist
-		desc = bond_market_default_recovery_industrialist_desc
 		# Boost industrialists, hurt all others, gain significant bond trust
 		add_loyalists = {
 			value = 0.2
@@ -53,8 +52,7 @@ bond_market_events.6 = {
 
 	option = {
 		name = bond_market_default_recovery_conservative
-		desc = bond_market_default_recovery_conservative_desc
-		default = yes
+		default_option = yes
 		# Small bond trust boost but hurt industrialists
 		change_variable = {
 			name = bond_trust

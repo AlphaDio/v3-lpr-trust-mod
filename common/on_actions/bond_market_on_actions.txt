@@ -3,8 +3,13 @@
 
 # Monthly pulse for bond trust system
 on_monthly_pulse_country = {
-	delay = { days = { 1 5 } }
+	on_actions = {
+		bond_market_monthly_pulse
+	}
+}
 
+# Bond market monthly pulse logic
+bond_market_monthly_pulse = {
 	events = {
 		bond_market_events.1  # Trigger trust update event for every country
 	}
@@ -23,12 +28,12 @@ on_monthly_pulse_country = {
 # Half-yearly pulse for bond rating grade changes
 on_half_yearly_pulse_country = {
 	events = {
-		bond_market_events.6  # AAA rating (95-100)
-		bond_market_events.7  # AA rating (85-94)
-		bond_market_events.8  # A rating (75-84)
-		bond_market_events.9  # B rating (65-74)
-		bond_market_events.10 # C rating (50-64)
-		bond_market_events.11 # D rating (25-49)
-		bond_market_events.12 # F rating (0-24)
+		bond_market_events.13 # AAA rating (95-100)
+		bond_market_events.14 # AA rating (85-94)
+		bond_market_events.15 # A rating (75-84)
+		bond_market_events.16 # B rating (65-74)
+		bond_market_events.17 # C rating (50-64)
+		bond_market_events.18 # D rating (25-49)
+		bond_market_events.19 # F rating (0-24)
 	}
 }

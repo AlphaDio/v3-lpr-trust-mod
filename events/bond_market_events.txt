@@ -8,7 +8,6 @@ bond_market_events.1 = {
 	placement = root
 
 	hidden = yes
-	major = no
 
 	title = bond_market_trust_update_title
 	desc = bond_market_trust_update_desc
@@ -200,7 +199,6 @@ bond_market_events.3 = {
 	# Accept their demands
 	option = {
 		name = bond_market_capitalist_radicalism_option_accept
-		desc = bond_market_capitalist_radicalism_option_accept_desc
 		add_loyalists = {
 			value = 0.01
 			strata = higher
@@ -210,11 +208,10 @@ bond_market_events.3 = {
 	# Reject their demands
 	option = {
 		name = bond_market_capitalist_radicalism_option_reject
-		desc = bond_market_capitalist_radicalism_option_reject_desc
 		# Gain loyalists among lower stratas
 		add_loyalists = {
 			value = 0.025
-			strata = ig_trade_unions
+			strata = ig:ig_trade_unions
 		}
 	}
 }
@@ -244,15 +241,14 @@ bond_market_events.4 = {
 	immediate = {
 		add_loyalists = {
 			value = -0.01
-			interest_group = ig_trade_unions
+			interest_group = ig:ig_trade_unions
 		}
 	}
 
 	# Accept union demands
 	option = {
 		name = bond_market_trade_union_radicalism_option_accept
-		desc = bond_market_trade_union_radicalism_option_accept_desc
-		default = yes
+		default_option = yes
 		add_loyalists = {
 			value = 0.025
 			strata = lower
@@ -262,7 +258,6 @@ bond_market_events.4 = {
 	# Reject union demands
 	option = {
 		name = bond_market_trade_union_radicalism_option_reject
-		desc = bond_market_trade_union_radicalism_option_reject_desc
 		add_loyalists = {
 			value = 0.01
 			strata = higher
@@ -304,10 +299,10 @@ bond_market_events.5 = {
 
 	option = {
 		name = bond_market_industrialist_loyalty_decline
-		default = yes
+		default_option = yes
 		add_loyalists = {
 			value = 0.01
-			interest_group = ig_industrialists
+			interest_group = ig:ig_industrialists
 		}
 	}
 }
