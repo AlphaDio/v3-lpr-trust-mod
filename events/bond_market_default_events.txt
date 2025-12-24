@@ -26,7 +26,7 @@ bond_market_events.6 = {
 	duration = 7
 
 	trigger = {
-		has_country_flag = in_default
+		in_default = yes
 	}
 
 	option = {
@@ -54,6 +54,7 @@ bond_market_events.6 = {
 	option = {
 		name = bond_market_default_recovery_conservative
 		desc = bond_market_default_recovery_conservative_desc
+		default = yes
 		# Small bond trust boost but hurt industrialists
 		change_variable = {
 			name = bond_trust

@@ -18,7 +18,7 @@ bond_market_events.1 = {
 		video = "unspecific_world_fair"
 	}
 
-	duration = 2
+	duration = 1
 
 	# This event runs monthly for every country to update bond trust
 
@@ -122,11 +122,6 @@ bond_market_events.1 = {
 		else = {
 			add_modifier = { name = bond_trust_tier_very_high days = -1 }
 		}
-	}
-
-	option = {
-		name = bond_market_trust_update_option
-		# No additional effects - trust update is handled in immediate block
 	}
 }
 
@@ -257,6 +252,7 @@ bond_market_events.4 = {
 	option = {
 		name = bond_market_trade_union_radicalism_option_accept
 		desc = bond_market_trade_union_radicalism_option_accept_desc
+		default = yes
 		add_loyalists = {
 			value = 0.025
 			strata = lower
@@ -308,9 +304,11 @@ bond_market_events.5 = {
 
 	option = {
 		name = bond_market_industrialist_loyalty_decline
+		default = yes
 		add_loyalists = {
 			value = 0.01
 			interest_group = ig_industrialists
 		}
 	}
 }
+

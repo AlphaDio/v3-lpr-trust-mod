@@ -76,6 +76,7 @@
 
  je_bond_market_default: "A State of Default"
  je_bond_market_default_status: "Our nation is currently in a state of sovereign default. This severely damages our international credit reputation and limits our ability to borrow on favorable terms. We must work to restore confidence in our economy and repay our debts."
+ je_bond_market_default_reason: "Tracking our nation's sovereign default status and recovery progress"
 
  bond_market_default_recovery_title: "Default Recovery Strategy"
  bond_market_default_recovery_desc: "As we struggle with sovereign default, our political factions are offering different paths to recovery. Industrialists propose aggressive economic restructuring that would prioritize their interests, while conservatives advocate for measured reforms that maintain broader political balance."

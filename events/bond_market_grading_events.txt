@@ -1,0 +1,255 @@
+# Bond Market Grading Events
+# These cosmetic events inform players of their current bond rating grade
+# Each event sets a country variable to track the current grade
+
+namespace = bond_market_events
+
+# ============================================================================
+# BOND MARKET GRADING EVENTS
+# ============================================================================
+# These cosmetic events inform players of their current bond rating grade
+# Each event sets a country variable to track the current grade
+
+# AAA Rating - Prime Grade (95-100 trust)
+bond_market_events.6 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_aaa_title
+	desc = bond_market_rating_aaa_desc
+	flavor = bond_market_rating_aaa_flavor
+
+	event_image = {
+		video = "unspecific_economy_good"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 95
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 6
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 6 } # AAA = 6
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
+
+# AA Rating - High Quality Grade (85-94 trust)
+bond_market_events.7 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_aa_title
+	desc = bond_market_rating_aa_desc
+	flavor = bond_market_rating_aa_flavor
+
+	event_image = {
+		video = "unspecific_economy_good"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 85
+		var:bond_trust < 95
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 5
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 5 } # AA = 5
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
+
+# A Rating - Upper Medium Grade (75-84 trust)
+bond_market_events.8 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_a_title
+	desc = bond_market_rating_a_desc
+	flavor = bond_market_rating_a_flavor
+
+	event_image = {
+		video = "unspecific_economy_good"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 75
+		var:bond_trust < 85
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 4
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 4 } # A = 4
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
+
+# B Rating - Lower Medium Grade (65-74 trust)
+bond_market_events.9 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_b_title
+	desc = bond_market_rating_b_desc
+	flavor = bond_market_rating_b_flavor
+
+	event_image = {
+		video = "unspecific_economy_neutral"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 65
+		var:bond_trust < 75
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 3
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 3 } # B = 3
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
+
+# C Rating - Speculative Grade (50-64 trust)
+bond_market_events.10 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_c_title
+	desc = bond_market_rating_c_desc
+	flavor = bond_market_rating_c_flavor
+
+	event_image = {
+		video = "unspecific_economy_bad"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 50
+		var:bond_trust < 65
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 2
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 2 } # C = 2
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
+
+# D Rating - Highly Speculative Grade (25-49 trust)
+bond_market_events.11 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_d_title
+	desc = bond_market_rating_d_desc
+	flavor = bond_market_rating_d_flavor
+
+	event_image = {
+		video = "unspecific_economy_bad"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 25
+		var:bond_trust < 50
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 1
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 1 } # D = 1
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
+
+# F Rating - Default/Distressed Grade (0-24 trust)
+bond_market_events.12 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_rating_f_title
+	desc = bond_market_rating_f_desc
+	flavor = bond_market_rating_f_flavor
+
+	event_image = {
+		video = "unspecific_economy_terrible"
+	}
+
+	duration = 1
+
+	trigger = {
+		has_variable = bond_trust
+		var:bond_trust >= 0
+		var:bond_trust < 25
+		OR = {
+			NOT = { has_variable = bond_rating }
+			var:bond_rating != 0
+		}
+	}
+
+	immediate = {
+		set_variable = { name = bond_rating value = 0 } # F = 0
+	}
+
+	option = {
+		name = bond_market_rating_acknowledge
+		default = yes
+	}
+}
