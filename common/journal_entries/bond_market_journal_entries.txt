@@ -46,9 +46,8 @@ je_bond_market_default = {
 		is_player = yes
 	}
 
-	# Available when player is in default
+	# Available any is in default
 	possible = {
-		is_player = yes
 		in_default = yes
 	}
 
