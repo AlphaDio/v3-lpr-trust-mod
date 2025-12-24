@@ -27,6 +27,7 @@ bond_market_monthly_pulse = {
 
 # Yearly pulse for bond rating grade changes
 on_yearly_pulse_country = {
+	delay = { days = { 1 180 } }
 	events = {
 		bond_market_events.13 # AAA rating (95-100)
 		bond_market_events.14 # AA rating (85-94)
