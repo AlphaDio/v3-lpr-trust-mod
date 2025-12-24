@@ -199,6 +199,7 @@ bond_market_events.3 = {
 	# Accept their demands
 	option = {
 		name = bond_market_capitalist_radicalism_option_accept
+		default_option = yes
 		add_loyalists = {
 			value = 0.01
 			strata = higher

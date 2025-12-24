@@ -25,8 +25,8 @@ bond_market_monthly_pulse = {
 	}
 }
 
-# Half-yearly pulse for bond rating grade changes
-on_half_yearly_pulse_country = {
+# Yearly pulse for bond rating grade changes
+on_yearly_pulse_country = {
 	events = {
 		bond_market_events.13 # AAA rating (95-100)
 		bond_market_events.14 # AA rating (85-94)
