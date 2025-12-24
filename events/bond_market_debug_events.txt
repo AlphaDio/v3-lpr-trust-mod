@@ -5,7 +5,7 @@
 # but are kept separate for organizational purposes.
 # ============================================================================
 
-namespace = bond_market_events
+namespace = bond_market_debug_events
 
 # Debug event to show current trust (no longer used)
 bond_market_debug_events.1 = {
