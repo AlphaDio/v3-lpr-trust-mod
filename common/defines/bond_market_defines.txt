@@ -5,11 +5,11 @@
 NGame = {
 	# Increase base credit limit to make debt more viable
 	# Default COUNTRY_MIN_CREDIT_BASE = 100000, increasing to 200000 for more borrowing capacity
-	COUNTRY_MIN_CREDIT_BASE = 150000
+	COUNTRY_MIN_CREDIT_BASE = 200000
 
 	# Increase scaled credit limit multiplier
 	# Default COUNTRY_MIN_CREDIT_SCALED = 0.5, increasing to 1.0 for more GDP-based credit
-	COUNTRY_MIN_CREDIT_SCALED = 0.75
+	COUNTRY_MIN_CREDIT_SCALED = 1.0
 }
 
 # Note: These defines make the bond market system more prominent by:
