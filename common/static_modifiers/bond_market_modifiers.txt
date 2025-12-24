@@ -36,14 +36,22 @@ lpr_medium_radical_increase = {
 
 # Small Treasury income boost for bond market rewards
 small_bond_market_treasury_boost = {
-	icon = "gfx/interface/icons/timed_modifier_icons/modifier_gold_positive.dds"
-	state_capitalists_investment_pool_efficiency_mult = 0.1
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
 	country_capitalists_pol_str_mult = 0.1
+	country_minting_mult = 0.1
 }
 
-# Small Treasury income boost for bond market rewards
+# Medium Treasury income boost for bond market rewards
 medium_bond_market_treasury_boost = {
-	icon = "gfx/interface/icons/timed_modifier_icons/modifier_gold_positive.dds"
-	state_capitalists_investment_pool_efficiency_mult = 0.25
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
 	country_capitalists_pol_str_mult = 0.25
+	country_minting_mult = 0.25
+}
+
+# High Treasury income boost for bond market rewards
+high_bond_market_treasury_boost = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+	state_capitalists_investment_pool_efficiency_mult = 0.1
+	country_capitalists_pol_str_mult = 0.5
+	country_minting_mult = 0.25
 }
