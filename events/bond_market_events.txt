@@ -34,34 +34,34 @@ bond_market_events.1 = {
 		# High debt penalty (≥70%)
 		if = {
 			limit = { scaled_debt >= 0.7 }
-			change_variable = { name = bond_trust add = -10 }
+			change_variable = { name = bond_trust add = -13 }
 
 			# Bonus for positive income despite high debt
 			if = {
 				limit = { net_fixed_income > 0 }
-				change_variable = { name = bond_trust add = 20 }
+				change_variable = { name = bond_trust add = 15 }
 			}
 		}
 		# Medium debt penalty (≥70%) - only if not in default
 		else_if = {
 			limit = { scaled_debt >= 0.5 }
-			change_variable = { name = bond_trust add = -5 }
+			change_variable = { name = bond_trust add = -8 }
 
 			# Bonus for positive income despite high debt
 			if = {
 				limit = { net_fixed_income > 0 }
-				change_variable = { name = bond_trust add = 13 }
+				change_variable = { name = bond_trust add = 10 }
 			}
 		}
 		# Low debt penalty (≥50%) - only if not in default
 		else_if = {
 			limit = { scaled_debt >= 0.2 }
-			change_variable = { name = bond_trust add = -3 }
+			change_variable = { name = bond_trust add = -5 }
 
 			# Bonus for positive income despite high debt
 			if = {
 				limit = { net_fixed_income > 0 }
-				change_variable = { name = bond_trust add = 8 }
+				change_variable = { name = bond_trust add = 7 }
 			}
 		}
 		# Bonus for low debt and surplus (≤20% debt + non-deficit)
@@ -70,7 +70,7 @@ bond_market_events.1 = {
 				scaled_debt <= 0.2
 				net_fixed_income >= 0
 			}
-			change_variable = { name = bond_trust add = 2 }
+			change_variable = { name = bond_trust add = 1 }
 		}
 
 		# Small drift toward 60 (neutral level)

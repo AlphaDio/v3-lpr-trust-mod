@@ -66,7 +66,7 @@
  bond_market_industrialist_loyalty_title: "Industrialist Investment Opportunity"
  bond_market_industrialist_loyalty_desc: "Our industrial leaders are offering substantial investment capital in exchange for accepting a temporary hit to our bond market reputation. They argue that domestic industrial priorities should take precedence over international financial perceptions."
  bond_market_industrialist_loyalty_flavor: "Domestic industry demands political priority over global finance."
- bond_market_industrialist_loyalty_accept: "Accept the industrialists' offer (-10 Bond Trust, +20% Tax Efficiency for 24 months)"
+ bond_market_industrialist_loyalty_accept: "Accept the industrialists' offer (-10 Bond Trust)"
  bond_market_industrialist_loyalty_decline: "Maintain our current financial strategy"
 
 # Journal entry localization
