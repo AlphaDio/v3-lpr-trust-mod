@@ -115,3 +115,42 @@ large_capitalist_political_penalty = {
 
 	country_capitalists_pol_str_mult = -0.15
 }
+
+# Shopkeeper generosity effects - comprehensive modifier for patriotic donation campaign
+shopkeeper_generosity_campaign = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength.dds"
+
+	interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
+	interest_group_ig_petty_bourgeoisie_approval_add = 6
+
+	# Economic strain reducing quality of life
+	country_quality_of_life_mult = -0.1
+
+	# Reduced shopkeeper wealth contribution to cash reserves
+	country_shopkeeper_wealth_mult = -0.2
+}
+
+# Trade route pillaging effects - reduced trade efficiency and diplomatic penalties
+trade_route_pillaging = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_trade_negative.dds"
+
+	interest_group_ig_armed_forces_pol_str_mult = 0.25
+	interest_group_ig_armed_forces_approval_add = 6
+
+	# Reduced trade efficiency from disrupted routes
+	country_trade_route_efficiency_mult = -0.25
+
+	# Diplomatic penalties with trade partners
+	country_diplomatic_relations_mult = -0.15
+}
+
+# Jubilee effects - severe radicalization of capitalists
+jubilee_radicalization = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+
+	interest_group_ig_devout_pol_str_mult = 0.25
+	interest_group_ig_devout_approval_add = 6
+
+	# Severe radicalism increase for capitalists
+	country_capitalists_radicalism_mult = 0.5
+}

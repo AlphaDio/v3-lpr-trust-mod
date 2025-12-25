@@ -41,6 +41,26 @@
  bond_trust_tier_very_high: "Very High Bond Trust"
  bond_trust_tier_very_high_desc: "Our excellent credit rating provides significant borrowing cost relief and greatly increased credit capacity"
 
+ # Shopkeeper generosity campaign modifiers
+ shopkeeper_generosity_campaign: "Patriotic Shopkeeper Campaign"
+ shopkeeper_generosity_campaign_desc: "Our shopkeepers have launched a patriotic donation campaign, boosting their political influence but straining the economy and reducing their wealth contributions to cash reserves"
+
+ trade_route_pillaging: "Disrupted Trade Routes"
+ trade_route_pillaging_desc: "The seizure of trade goods has severely disrupted international commerce, reduced diplomatic relations, and increased internal radicalism"
+
+ jubilee_radicalization: "Capitalist Radicalization"
+ jubilee_radicalization_desc: "The jubilee debt forgiveness has severely radicalized our capitalist class, who view this as an attack on property rights and economic stability"
+
+ small_bond_market_treasury_boost: "Bond Market Treasury Boost"
+ small_bond_market_treasury_boost_desc: "International investor confidence provides a temporary boost to treasury income"
+ medium_bond_market_treasury_boost: "Strong Bond Market Treasury Boost"
+ medium_bond_market_treasury_boost_desc: "Strong international investor confidence provides a significant boost to treasury income"
+ high_bond_market_treasury_boost: "Excellent Bond Market Treasury Boost"
+ high_bond_market_treasury_boost_desc: "Excellent international investor confidence provides a major boost to treasury income"
+
+ lpr_medium_radical_increase: "Increased Radicalism"
+ lpr_medium_radical_increase_desc: "Political movements are becoming more radical due to economic conditions"
+
 # New bond market events
  bond_market_income_title: "Bond Market Confidence Boost"
  bond_market_income_desc: "Our strong bond market standing has attracted international investors, providing a sustained boost to our tax revenue for the coming months."
@@ -116,3 +136,24 @@
  bond_market_low_trust_crisis_flavor: "Economic uncertainty breeds demands for intervention."
  bond_market_low_trust_bailout: "Authorize the Bailout (-10 Trust)"
  bond_market_low_trust_reject: "We have this situation under control (+20 Trust)"
+
+ # Shopkeeper Generosity Event
+ bond_market_shopkeeper_generosity_title: "Patriotic Shopkeeper Donation"
+ bond_market_shopkeeper_generosity_desc: "In a display of national solidarity during our time of crisis, the shopkeeper class has organized a massive patriotic donation campaign. They are offering to contribute a significant portion of their wealth to the treasury, but this generosity comes with political expectations and economic strain on the population."
+ bond_market_shopkeeper_generosity_flavor: "Shopkeepers show their patriotism through sacrifice."
+ bond_market_shopkeeper_generosity_accept: "Accept the Generous Donation"
+ bond_market_shopkeeper_generosity_decline: "Politely Decline Their Offer"
+
+ # Trade Route Pillaging Event
+ bond_market_pillage_trade_title: "Seizure of Trade Goods"
+ bond_market_pillage_trade_desc: "Desperate for revenue during our sovereign default, officials have authorized the seizure of valuable goods from trade caravans and merchant vessels operating within our territory. This provides immediate treasury income but disrupts international trade and angers our diplomatic partners."
+ bond_market_pillage_trade_flavor: "Desperate measures for desperate times."
+ bond_market_pillage_trade_accept: "Authorize the Seizures"
+ bond_market_pillage_trade_decline: "Respect International Trade"
+
+ # Jubilee Event
+ bond_market_jubilee_title: "Economic Jubilee"
+ bond_market_jubilee_desc: "In a radical move to address the economic suffering caused by our default, the government has declared a 'jubilee' - canceling debts and distributing relief funds to the population. While this provides immediate economic relief, it has outraged our capitalist class who see their investments and loan repayments evaporate."
+ bond_market_jubilee_flavor: "Forgiving debts in times of crisis."
+ bond_market_jubilee_accept: "Declare the Jubilee"
+ bond_market_jubilee_decline: "Maintain Property Rights"

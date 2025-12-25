@@ -7,7 +7,7 @@
 
 namespace = bond_market_events
 
-# Default recovery choice - weekly event for countries in default
+# 
 bond_market_events.6 = {
 	type = country_event
 	placement = root
@@ -27,6 +27,10 @@ bond_market_events.6 = {
 
 	trigger = {
 		in_default = yes
+	}
+
+	cooldown = {
+		years = 3
 	}
 
 	option = {
@@ -60,7 +64,188 @@ bond_market_events.6 = {
 		}
 		add_loyalists = {
 			value = -0.15
-			strata = higher  # Hurt industrialists
+			interest_group = ig:ig_industrialists  # Hurt industrialists
+		}
+	}
+}
+
+# Shopkeeper generosity event - patriotic donation during crisis
+bond_market_events.21 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_shopkeeper_generosity_title
+	desc = bond_market_shopkeeper_generosity_desc
+	flavor = bond_market_shopkeeper_generosity_flavor
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 7
+
+	trigger = {
+		in_default = yes
+	}
+
+	cooldown = {
+		years = 3
+	}
+
+	option = {
+		name = bond_market_shopkeeper_generosity_accept
+
+		# Give 10% of GDP to treasury
+		add_treasury = {
+			value = root.gdp
+			divide = 10  # 10% of GDP
+		}
+
+		# Apply comprehensive shopkeeper generosity campaign effects
+		add_modifier = {
+			name = shopkeeper_generosity_campaign
+			years = 2
+		}
+	}
+
+	option = {
+		name = bond_market_shopkeeper_generosity_decline
+		default_option = yes
+
+		# Small boost to bond trust for maintaining normal economic activity
+		change_variable = {
+			name = bond_trust
+			add = 10
+		}
+		add_loyalists = {
+			value = -0.15
+			interest_group = ig:ig_petty_bourgeoisie  # Hurt Petty Bourgeoisie
+		}
+	}
+}
+
+# Trade route pillaging event - seize goods from trade routes for immediate revenue
+bond_market_events.22 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_pillage_trade_title
+	desc = bond_market_pillage_trade_desc
+	flavor = bond_market_pillage_trade_flavor
+
+	event_image = {
+		video = "unspecific_economy_bad"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	duration = 7
+
+	trigger = {
+		in_default = yes
+	}
+
+	cooldown = {
+		years = 3
+	}
+
+	option = {
+		name = bond_market_pillage_trade_accept
+
+		# Generate immediate treasury income by seizing trade goods
+		add_treasury = {
+			value = root.gdp
+			divide = 8  # 12.5% of GDP
+		}
+
+		# Apply trade disruption penalties
+		add_modifier = {
+			name = trade_route_pillaging
+			years = 2
+		}
+	}
+
+	option = {
+		name = bond_market_pillage_trade_decline
+		default_option = yes
+
+		# Minor diplomatic boost for respecting international trade norms
+		change_variable = {
+			name = bond_trust
+			add = 10
+		}
+		add_loyalists = {
+			value = -0.15
+			interest_group = ig:ig_armed_forces  # Hurt Armed Forces
+		}
+	}
+}
+
+# Jubilee event - debt forgiveness that radicalizes capitalists
+bond_market_events.23 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_jubilee_title
+	desc = bond_market_jubilee_desc
+	flavor = bond_market_jubilee_flavor
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 7
+
+	trigger = {
+		in_default = yes
+	}
+
+	cooldown = {
+		years = 3
+	}
+
+	option = {
+		name = bond_market_jubilee_accept
+		
+		# Distribute 20% of GDP as jubilee relief
+		add_treasury = {
+			value = root.gdp
+			divide = 5  # 20% of GDP
+		}
+
+		# Apply severe capitalist radicalization
+		add_modifier = {
+			name = jubilee_radicalization
+			years = 2
+		}
+
+		# Small trust penalty
+		change_variable = {
+			name = bond_trust
+			add = -5
+		}
+	}
+
+	option = {
+		name = bond_market_jubilee_decline
+		default_option = yes
+
+		# Maintain capitalist confidence
+		change_variable = {
+			name = bond_trust
+			add = 5
+		}
+
+		add_loyalists = {
+			value = -0.15
+			interest_group = ig:ig_devout  # Hurt industrialists
 		}
 	}
 }
