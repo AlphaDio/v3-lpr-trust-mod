@@ -6,6 +6,7 @@ on_monthly_pulse_country = {
 	on_actions = {
 		delay = { days = { 1 15 } }
 		bond_market_monthly_pulse
+    bond_market_defaulting_monthly_pulse
 	}
 }
 
@@ -19,11 +20,23 @@ bond_market_monthly_pulse = {
 	random_events = {
 		60 = 0  # 
 		25 = bond_market_events.2  # 25% chance of income bonus (medium+ trust)
-		8 = bond_market_events.4   # 8% chance of union unrest (trust > 70)
+		10 = bond_market_events.4   # 8% chance of union unrest (trust > 70)
 		5 = bond_market_events.3   # 5% chance of capitalist unrest (trust < 50)
-		3 = bond_market_events.5   # 3% chance of industrialist loyalty (trust >= 30)
-		2 = bond_market_events.20  # 2% chance of low trust crisis (trust 30-50)
+		10 = bond_market_events.5   # 3% chance of industrialist loyalty (trust >= 30)
 	}
+}
+
+# Bond defaulting events pulse
+bond_market_defaulting_monthly_pulse = {
+	# Combined bond market random events
+    random_events = {
+        60 = 0  #
+        5 = bond_market_events.20 # Industrialists demands a bailout
+        # A show of generosity and patriotism by the shopkeepers
+        # Pillage trade routes
+        # Jubilee
+        # Nationalize everything
+        # Revolution!!!
 }
 
 # Yearly pulse for bond rating grade changes
