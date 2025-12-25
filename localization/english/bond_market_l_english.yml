@@ -109,3 +109,10 @@
  bond_market_rating_f_desc: "Our severe financial distress has led to the lowest possible bond rating. We are viewed as a distressed borrower, with extremely limited access to international capital markets and exorbitant borrowing costs."
  bond_market_rating_f_flavor: "Default looms as a real possibility."
  bond_market_rating_acknowledge: "Acknowledge"
+
+# Low Bond Trust Crisis Events
+ bond_market_low_trust_crisis_title: "Bailout Demands"
+ bond_market_low_trust_crisis_desc: "With our bond market confidence faltering, capitalist leaders are demanding immediate government intervention to stabilize financial markets. They argue that a substantial treasury injection is necessary to prevent a complete market collapse."
+ bond_market_low_trust_crisis_flavor: "Economic uncertainty breeds demands for intervention."
+ bond_market_low_trust_bailout: "Authorize the Bailout (-10 Trust)"
+ bond_market_low_trust_reject: "We have this situation under control (+20 Trust)"

@@ -124,7 +124,7 @@ bond_market_events.16 = {
 	flavor = bond_market_rating_b_flavor
 
 	event_image = {
-		video = "unspecific_economy_neutral"
+		video = "unspecific_economy_good"
 	}
 
 	duration = 1

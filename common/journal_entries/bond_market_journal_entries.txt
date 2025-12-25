@@ -36,7 +36,7 @@ je_bond_market_debug = {
 
 # Journal entry for when country is in default
 je_bond_market_default = {
-	icon = "gfx/interface/icons/event_icons/event_bankruptcy.dds"
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	# Groups this entry under Internal Affairs in the journal UI
 	group = je_group_internal_affairs

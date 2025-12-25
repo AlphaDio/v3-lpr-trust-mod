@@ -15,3 +15,13 @@ The mod introduces a bond trust system that affects loan interest rates and cred
 ## Balancing Design Principles
 
 One of the major balancing design principles of LPR mods is that big powerful countries will be crippled by powerful communist and revolutionaries currents, while smaller countries get better ways to build and grow than in the base game. This creates a more dynamic and balanced global landscape where established powers face greater internal challenges, while emerging nations have enhanced opportunities for development and expansion.
+
+
+### Bond Trust
+
+Bond Trust gives some leeway to being on Credit.
+
+Being in very low bond trust is essentially a failure state and will almost inevitably lead to Bankruptcy.
+Being in low bond trust is manageable, and can be used to heavily invest in the country. Events allowing to maintain the status quo, but at the cost of some radicalism.
+Being in average bond trust is the sweet spot, allowing for investing in the country, with the choice is further going into debt or starting to accumulate reserves.
+Being in a high bond trust, and with gold reserves, gives access to bonuses that benefits War and fighting Communist activism and interventions.

@@ -5,53 +5,113 @@
 
 # Very Low Trust (0-19): Severe interest penalty and greatly reduced credit capacity
 bond_trust_tier_very_low = {
-	country_loan_interest_rate_add = 0.10  # +10% interest rate
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds"
+
+	country_loan_interest_rate_add = 0.30  # +30% interest rate
 }
 
 # Low Trust (20-39): High interest penalty and reduced credit capacity
 bond_trust_tier_low = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds"
+
 	country_loan_interest_rate_add = 0.05  # +5% interest rate
 }
 
 # Medium Trust (40-59): Moderate interest penalty and neutral credit capacity
 bond_trust_tier_medium = {
-	country_loan_interest_rate_add = 0.01   # +1% interest rate
-	# No cash reserves modifier for medium trust - neutral effect
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+
+	country_loan_interest_rate_add = -0.10  # +10% interest rate
 }
 
 # High Trust (60-79): Interest bonus and increased credit capacity
 bond_trust_tier_high = {
-	country_loan_interest_rate_add = -0.01  # -1% interest rate
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+
 }
 
 # Very High Trust (80-100): Significant interest bonus and greatly increased credit capacity
 bond_trust_tier_very_high = {
-	country_loan_interest_rate_add = -0.03  # -3% interest rate
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+
 }
 
 lpr_medium_radical_increase = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+
 	state_radicals_from_political_movements_mult = 0.5
 }
 
 # Small Treasury income boost for bond market rewards
 small_bond_market_treasury_boost = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+
 	country_capitalists_pol_str_mult = 0.1
+	country_minting_add = 1000
 	country_minting_mult = 0.1
 }
 
 # Medium Treasury income boost for bond market rewards
 medium_bond_market_treasury_boost = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+
 	country_capitalists_pol_str_mult = 0.25
+	country_minting_add = 2500
 	country_minting_mult = 0.25
 }
 
 # High Treasury income boost for bond market rewards
 high_bond_market_treasury_boost = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds"
+
 	state_capitalists_investment_pool_efficiency_mult = 0.1
 	country_capitalists_pol_str_mult = 0.5
+	country_minting_add = 5000
 	country_minting_mult = 0.25
+}
+
+# ============================================================================
+# CAPITALIST POLITICAL STRENGTH MODIFIERS
+# ============================================================================
+# These modifiers affect the political strength of the capitalist interest group
+# Used in bond market interventions and economic policy events
+# Positive modifiers boost capitalist influence, negative ones reduce it
+# ============================================================================
+
+# Capitalist political strength modifiers - various degrees of boost
+small_capitalist_political_boost = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength.dds"
+
+	country_capitalists_pol_str_mult = 0.05
+}
+
+medium_capitalist_political_boost = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength.dds"
+
+	country_capitalists_pol_str_mult = 0.15
+}
+
+large_capitalist_political_boost = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength.dds"
+
+	country_capitalists_pol_str_mult = 0.25
+}
+
+# Capitalist political strength penalties - various degrees of reduction
+small_capitalist_political_penalty = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength_negative.dds"
+
+	country_capitalists_pol_str_mult = -0.05
+}
+
+medium_capitalist_political_penalty = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength_negative.dds"
+
+	country_capitalists_pol_str_mult = -0.1
+}
+
+large_capitalist_political_penalty = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength_negative.dds"
+
+	country_capitalists_pol_str_mult = -0.15
 }

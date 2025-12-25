@@ -147,7 +147,7 @@ bond_market_events.2 = {
 	}
 
     cooldown = {
-		months = 3
+		months = 6
 	}
 
 	immediate = {
@@ -189,6 +189,10 @@ bond_market_events.3 = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	duration = 2
+
+	cooldown = {
+		years = 3
+	}
 
 	trigger = {
 		var:bond_trust < 50
@@ -239,6 +243,10 @@ bond_market_events.4 = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	duration = 2
+	
+	cooldown = {
+		years = 3
+	}
 
 	trigger = {
 		var:bond_trust > 70
@@ -288,6 +296,10 @@ bond_market_events.5 = {
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 
 	duration = 3
+	
+	cooldown = {
+		years = 3
+	}
 
 	# Only trigger when bond trust is above 30 to make the cost meaningful
 	trigger = {
@@ -312,4 +324,3 @@ bond_market_events.5 = {
 		}
 	}
 }
-

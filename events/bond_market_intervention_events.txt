@@ -1,0 +1,89 @@
+# ============================================================================
+# LOW BOND TRUST EVENTS
+# ============================================================================
+# These events trigger when bond trust is low (30-50), representing
+# economic distress and market instability that ask intervention.
+# ============================================================================
+
+namespace = bond_market_events
+
+# Low Bond Trust Crisis Event
+# Triggers when trust is between 30-50
+# Represents capitalist bailout demands during economic uncertainty
+bond_market_events.20 = {
+    type = country_event
+    placement = root
+
+    trigger = {
+        has_variable = bond_trust
+        var:bond_trust >= 30
+        var:bond_trust < 50
+    }
+
+    title = bond_market_low_trust_crisis_title
+    desc = bond_market_low_trust_crisis_desc
+    flavor = bond_market_low_trust_crisis_flavor
+
+    event_image = {
+        video = "unspecific_economy_bad"
+    }
+
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+    duration = 7
+
+    cooldown = {
+        years = 3
+    }
+
+    # Option A: Bailout the Capitalists (Primary Choice)
+    # Increases capitalist political strength, gives 10% GDP to treasury
+    # But radicalizes trade unions and reduces trust
+    option = {
+        name = bond_market_low_trust_bailout
+        default_option = yes
+
+        # Give 10% of GDP to treasury
+        add_treasury = {
+            value = root.gdp
+            divide = 10  # 10% of GDP
+        }
+
+        # Increase capitalist political strength
+        add_modifier = {
+            name = medium_capitalist_political_boost
+            years = 2
+        }
+
+        # Radicalize trade unions significantly
+        add_loyalists = {
+            value = large_radicals
+            interest_group = ig:ig_trade_unions
+        }
+
+        # Reduce bond trust by 10
+        change_variable = {
+            name = bond_trust
+            add = -10
+        }
+    }
+
+    # Option B: Reject the Bailout "We got this, we don't need your help"
+    # Maintains trust but hurts capitalists and gives smaller treasury boost
+    option = {
+        name = bond_market_low_trust_reject
+
+        # Hurt capitalist political strength
+        add_modifier = {
+            name = medium_capitalist_political_penalty
+            years = 2
+        }
+
+        # Small trust boost for standing firm
+        change_variable = {
+            name = bond_trust
+            add = 20
+        }
+    }
+}

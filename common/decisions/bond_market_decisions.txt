@@ -15,7 +15,7 @@ bond_market_show_trust = {
 			}
 			set_variable = { name = bond_trust value = 60 }
 		}
-		country_event = bond_market_events.2
+		trigger_event = bond_market_events.2
 	}
 }
 
@@ -24,6 +24,7 @@ bond_market_add_journal_entry = {
 		always = yes
 	}
 	possible = {
+		is_player = yes
 		always = yes
 	}
 	when_taken = {
@@ -42,7 +43,7 @@ bond_market_set_trust_10 = {
 	}
 	when_taken = {
 		set_variable = { name = bond_trust value = 10 }
-		country_event = bond_market_events.3
+		trigger_event = bond_market_events.3
 	}
 }
 
@@ -55,7 +56,7 @@ bond_market_set_trust_50 = {
 	}
 	when_taken = {
 		set_variable = { name = bond_trust value = 50 }
-		country_event = bond_market_events.3
+		trigger_event = bond_market_events.3
 	}
 }
 
@@ -68,6 +69,6 @@ bond_market_set_trust_95 = {
 	}
 	when_taken = {
 		set_variable = { name = bond_trust value = 95 }
-		country_event = bond_market_events.3
+		trigger_event = bond_market_events.3
 	}
 }
