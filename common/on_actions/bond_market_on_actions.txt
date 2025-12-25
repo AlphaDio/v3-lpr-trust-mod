@@ -37,6 +37,7 @@ bond_market_defaulting_monthly_pulse = {
         # Jubilee
         # Nationalize everything
         # Revolution!!!
+  }
 }
 
 # Yearly pulse for bond rating grade changes
