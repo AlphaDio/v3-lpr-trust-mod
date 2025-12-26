@@ -154,15 +154,24 @@ bond_market_events.2 = {
 		# Determine income bonus duration based on trust tier
 		if = {
 			limit = { var:bond_trust >= 70 }  # Very High Trust
-			add_modifier = { name = high_bond_market_treasury_boost days = 30 }
+			add_modifier = {
+				name = high_bond_market_treasury_boost 
+				days = 90 
+			}
 		}
 		else_if = {
 			limit = { var:bond_trust >= 50 }  # High Trust
-			add_modifier = { name = medium_bond_market_treasury_boost days = 30 }
+			add_modifier = { 
+				name = medium_bond_market_treasury_boost 
+				days = 90 
+			}
 		}
 		else_if = {
 			limit = { var:bond_trust >= 30 }  # Medium Trust
-			add_modifier = { name = small_bond_market_treasury_boost days = 30 }
+			add_modifier = { 
+				name = small_bond_market_treasury_boost 
+				days = 90 
+			}
 		}
 		add_treasury = 5000
 	}
