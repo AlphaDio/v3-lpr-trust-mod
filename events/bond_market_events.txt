@@ -73,16 +73,6 @@ bond_market_events.1 = {
 			change_variable = { name = bond_trust add = 1 }
 		}
 
-		# Small drift toward 60 (neutral level)
-		if = {
-			limit = { var:bond_trust < 60 }
-			change_variable = { name = bond_trust add = 1 }
-		}
-		else_if = {
-			limit = { var:bond_trust > 60 }
-			change_variable = { name = bond_trust add = -1 }
-		}
-
 		# Clamp trust between 0 and 100
 		if = {
 			limit = { var:bond_trust < 0 }

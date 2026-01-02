@@ -61,6 +61,21 @@
  lpr_medium_radical_increase: "Increased Radicalism"
  lpr_medium_radical_increase_desc: "Political movements are becoming more radical due to economic conditions"
 
+ # Capitalist Political Strength Modifiers
+ small_capitalist_political_boost: "Minor Capitalist Influence Boost"
+ small_capitalist_political_boost_desc: "Capitalist interests have gained a small increase in political influence"
+ medium_capitalist_political_boost: "Moderate Capitalist Influence Boost"
+ medium_capitalist_political_boost_desc: "Capitalist interests have gained a moderate increase in political influence"
+ large_capitalist_political_boost: "Major Capitalist Influence Boost"
+ large_capitalist_political_boost_desc: "Capitalist interests have gained a significant increase in political influence"
+
+ small_capitalist_political_penalty: "Minor Capitalist Influence Reduction"
+ small_capitalist_political_penalty_desc: "Capitalist interests have suffered a small reduction in political influence"
+ medium_capitalist_political_penalty: "Moderate Capitalist Influence Reduction"
+ medium_capitalist_political_penalty_desc: "Capitalist interests have suffered a moderate reduction in political influence"
+ large_capitalist_political_penalty: "Major Capitalist Influence Reduction"
+ large_capitalist_political_penalty_desc: "Capitalist interests have suffered a significant reduction in political influence"
+
 # New bond market events
  bond_market_income_title: "Bond Market Confidence Boost"
  bond_market_income_desc: "Our strong bond market standing has attracted international investors, providing a sustained boost to our tax revenue for the coming months."
@@ -157,3 +172,12 @@
  bond_market_jubilee_flavor: "Forgiving debts in times of crisis."
  bond_market_jubilee_accept: "Declare the Jubilee"
  bond_market_jubilee_decline: "Maintain Property Rights"
+
+ # Balance Event
+ bond_market_balance_crisis_title: "Bond Market Balance Crisis"
+ bond_market_balance_crisis_desc: "International financial markets are pressuring our government to address imbalances in our economic policies. We must choose between alienating a powerful interest group or damaging our international credit rating."
+ bond_market_balance_crisis_flavor: "The global economy demands difficult choices from major powers."
+ bond_market_balance_hurt_ig: "Confront the Interest Group"
+ bond_market_balance_hurt_ig_desc: "Reduce approval with the [saved_ig.GetName] to maintain our bond market standing."
+ bond_market_balance_lose_trust: "Accept Credit Damage"
+ bond_market_balance_lose_trust_desc: "Take a significant hit to our bond trust rather than alienating domestic interests."

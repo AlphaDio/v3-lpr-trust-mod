@@ -1,0 +1,62 @@
+# ============================================================================
+# BOND MARKET BALANCE EVENTS
+# ============================================================================
+# Events that provide balance mechanisms for major powers in the bond market
+# These events force difficult choices that impact interest groups or bond trust
+# ============================================================================
+
+namespace = bond_market_events
+
+#
+bond_market_events.10 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_balance_crisis_title
+	desc = bond_market_balance_crisis_desc
+	flavor = bond_market_balance_crisis_flavor
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	duration = 30
+
+	trigger = {
+		is_major_power = yes
+		has_variable = bond_trust
+	}
+
+	cooldown = {
+		years = 3
+	}
+
+	# Select a random interest group with clout > 0.5
+	random_interest_group = {
+		save_scope_as = saved_ig
+		limit = {
+			ig_clout > 0.5
+		}
+	}
+
+	option = {
+		name = bond_market_balance_hurt_ig
+		desc = bond_market_balance_hurt_ig_desc
+
+		# Reduce approval of the random interest group by 5
+		saved_ig = {
+			interest_group_approval_add = -5
+		}
+	}
+
+	option = {
+		name = bond_market_balance_lose_trust
+		desc = bond_market_balance_lose_trust_desc
+
+		# Reduce bond trust by 20
+		change_variable = { name = bond_trust add = -20 }
+	}
+}
