@@ -323,3 +323,47 @@ bond_market_events.5 = {
 		}
 	}
 }
+
+# Barracks Expansion Military Bonus Event
+# Triggers when barracks building level increases and conditions are met
+bond_market_events.24 = {
+	type = country_event
+	placement = root
+
+	title = bond_market_barracks_expansion_title
+	desc = bond_market_barracks_expansion_desc
+	flavor = bond_market_barracks_expansion_flavor
+
+	event_image = {
+		video = "unspecific_military_parade"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+
+	duration = 5
+
+	cooldown = {
+		years = 3
+	}
+
+	# Only trigger if conditions are met: >1500000 gold reserves and >60 trust
+	trigger = {
+		gold_reserves >= 1500000
+		var:bond_trust > 60
+	}
+
+	# Immediate effect: Apply massive army bonus
+	immediate = {
+		add_treasury = -1000000
+		add_modifier = {
+			name = lpr_bond_market_large_military_boost
+			years = 3
+		}
+	}
+
+	# Single option acknowledging the bonus
+	option = {
+		name = bond_market_barracks_expansion_option
+	}
+}

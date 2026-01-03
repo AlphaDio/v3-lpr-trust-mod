@@ -181,3 +181,21 @@
  bond_market_balance_hurt_ig_desc: "Reduce approval with the [saved_ig.GetName] to maintain our bond market standing."
  bond_market_balance_lose_trust: "Accept Credit Damage"
  bond_market_balance_lose_trust_desc: "Take a significant hit to our bond trust rather than alienating domestic interests."
+
+ # Barracks Expansion Military Bonus Event
+ bond_market_barracks_expansion_title: "Military Readiness Boost"
+ bond_market_barracks_expansion_desc: "Our substantial gold reserves and strong international credit standing have enabled us to provide our military with exceptional training facilities and equipment following the expansion of our barracks. Our army's combat effectiveness has been significantly enhanced."
+ bond_market_barracks_expansion_flavor: "Financial strength translates to military might."
+ bond_market_barracks_expansion_option: "Our soldiers stand ready!"
+
+ # Small Military Boost Modifier
+ lpr_bond_market_small_military_boost: "Enhanced Military Readiness"
+ lpr_bond_market_small_military_boost_desc: "Army units have 15% higher offensive and defensive capabilities, with improved organization recovery, movement speed, and 10% lower military goods costs"
+
+ # Medium Military Boost Modifier
+ lpr_bond_market_medium_military_boost: "Advanced Military Readiness"
+ lpr_bond_market_medium_military_boost_desc: "Army units have 25% higher offensive and defensive capabilities, with enhanced organization recovery, movement speed, and 15% lower military goods costs"
+
+ # Large Military Boost Modifier
+ lpr_bond_market_large_military_boost: "Elite Military Readiness"
+ lpr_bond_market_large_military_boost_desc: "Army units have 50% higher offensive and defensive capabilities, with enhanced organization recovery, movement speed, and 25% lower military goods costs"
