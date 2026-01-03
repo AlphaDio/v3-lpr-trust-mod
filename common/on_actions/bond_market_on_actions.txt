@@ -55,11 +55,27 @@ on_yearly_pulse_country = {
 
 # Barracks expansion military bonus
 # Triggers when barracks building level increases
-on_building_expanded = {
-	trigger = {
-		building_type = building_barracks
+on_building_built = {
+	on_actions = {
+		bond_market_barracks_built
 	}
-	events = {
-		bond_market_events.24
+}
+
+bond_market_barracks_built = {
+	effect = {
+		if = {
+			limit = {
+				owner = {
+					gold_reserves >= 1500000
+					var:bond_trust > 60
+				}
+			}
+			owner = {
+				trigger_event = {
+					id = bond_market_events.24
+					popup = yes
+				}
+			}
+		}
 	}
 }

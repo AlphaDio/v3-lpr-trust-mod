@@ -26,7 +26,7 @@ bond_market_events.10 = {
 	duration = 30
 
 	trigger = {
-		is_major_power = yes
+		country_rank >= rank_value:major_power
 		has_variable = bond_trust
 	}
 
@@ -34,27 +34,31 @@ bond_market_events.10 = {
 		years = 3
 	}
 
-	# Select a random interest group with clout > 0.5
-	random_interest_group = {
-		save_scope_as = saved_ig
-		limit = {
-			ig_clout > 0.5
+	immediate = {
+		# Select a random interest group with clout > 0.5
+		random_interest_group = {
+			limit = {
+				ig_clout > 0.5
+			}
+			save_scope_as = saved_ig
 		}
 	}
 
 	option = {
 		name = bond_market_balance_hurt_ig
-		desc = bond_market_balance_hurt_ig_desc
+		default_option = yes
 
 		# Reduce approval of the random interest group by 5
-		saved_ig = {
-			interest_group_approval_add = -5
+		scope:saved_ig = {
+			add_modifier = {
+				name = bond_market_medium_interest_group_approval_penalty
+				years = 2
+			}
 		}
 	}
 
 	option = {
 		name = bond_market_balance_lose_trust
-		desc = bond_market_balance_lose_trust_desc
 
 		# Reduce bond trust by 20
 		change_variable = { name = bond_trust add = -20 }

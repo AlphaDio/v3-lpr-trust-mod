@@ -36,11 +36,6 @@ bond_trust_tier_very_high = {
 
 }
 
-lpr_medium_radical_increase = {
-	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
-
-	state_radicals_from_political_movements_mult = 0.5
-}
 
 # Small Treasury income boost for bond market rewards
 small_bond_market_treasury_boost = {
@@ -153,6 +148,30 @@ jubilee_radicalization = {
 
 	# Severe radicalism increase for capitalists
 
+}
+
+# Small interest group approval penalty - minor disapproval
+# Used in bond market events for light penalties
+bond_market_small_interest_group_approval_penalty = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength_negative.dds"
+
+	interest_group_approval_add = -3
+}
+
+# Medium interest group approval penalty - moderate disapproval
+# Used in bond market balance events for standard penalties
+bond_market_medium_interest_group_approval_penalty = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength_negative.dds"
+
+	interest_group_approval_add = -5
+}
+
+# Large interest group approval penalty - severe disapproval
+# Used in bond market events for major penalties
+bond_market_large_interest_group_approval_penalty = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_political_strength_negative.dds"
+
+	interest_group_approval_add = -8
 }
 
 # Small military boost - provides a modest enhancement to army capabilities

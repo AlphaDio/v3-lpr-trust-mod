@@ -58,8 +58,6 @@
  high_bond_market_treasury_boost: "Excellent Bond Market Treasury Boost"
  high_bond_market_treasury_boost_desc: "Excellent international investor confidence provides a major boost to treasury income"
 
- lpr_medium_radical_increase: "Increased Radicalism"
- lpr_medium_radical_increase_desc: "Political movements are becoming more radical due to economic conditions"
 
  # Capitalist Political Strength Modifiers
  small_capitalist_political_boost: "Minor Capitalist Influence Boost"
@@ -199,3 +197,13 @@
  # Large Military Boost Modifier
  lpr_bond_market_large_military_boost: "Elite Military Readiness"
  lpr_bond_market_large_military_boost_desc: "Army units have 50% higher offensive and defensive capabilities, with enhanced organization recovery, movement speed, and 25% lower military goods costs"
+
+ # Interest Group Approval Penalty Modifiers
+ bond_market_small_interest_group_approval_penalty: "Mild Public Disapproval"
+ bond_market_small_interest_group_approval_penalty_desc: "This interest group faces mild public disapproval, slightly reducing their approval rating"
+
+ bond_market_medium_interest_group_approval_penalty: "Public Disapproval"
+ bond_market_medium_interest_group_approval_penalty_desc: "This interest group faces public disapproval, moderately reducing their approval rating"
+
+ bond_market_large_interest_group_approval_penalty: "Severe Public Disapproval"
+ bond_market_large_interest_group_approval_penalty_desc: "This interest group faces severe public disapproval, significantly reducing their approval rating"
