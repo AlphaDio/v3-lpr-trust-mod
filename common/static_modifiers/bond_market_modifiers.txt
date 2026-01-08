@@ -175,33 +175,31 @@ bond_market_large_interest_group_approval_penalty = {
 }
 
 # Small military boost - provides a modest enhancement to army capabilities
-# This provides a 15% boost to offense and defense, plus minor organizational benefits and reduced military goods costs
+# This provides a boost to offense and defense, and reduced military goods costs
 lpr_bond_market_small_military_boost = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+
+	unit_army_offense_mult = 0.05
+	unit_army_defense_mult = 0.05
+ country_military_goods_cost_mult = -0.05
+}
+
+# Medium military boost - provides a moderate enhancement to army capabilities
+# This provides a boost to offense and defense, and reduced military goods costs
+lpr_bond_market_medium_military_boost = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
 
 	unit_army_offense_mult = 0.15
 	unit_army_defense_mult = 0.15
+	country_military_goods_cost_mult = -0.15
 }
 
-# Medium military boost - provides a moderate enhancement to army capabilities
-# This provides a 25% boost to offense and defense, plus organizational benefits and reduced military goods costs
-lpr_bond_market_medium_military_boost = {
+# Large military boost - provides a significant enhancement to army capabilities
+# This provides a boost to offense and defense, and reduced military goods costs
+lpr_bond_market_large_military_boost = {
 	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
 
 	unit_army_offense_mult = 0.25
 	unit_army_defense_mult = 0.25
-	military_formation_organization_gain_mult = 0.15
-	military_formation_movement_speed_mult = 0.1
-}
-
-# Large military boost - provides a significant enhancement to army capabilities
-# This provides a 50% boost to offense and defense, plus additional organizational benefits and reduced military goods costs
-lpr_bond_market_large_military_boost = {
-	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
-
-	unit_army_offense_mult = 0.5
-	unit_army_defense_mult = 0.5
-	military_formation_organization_gain_mult = 0.25
-	military_formation_movement_speed_mult = 0.15
-	country_military_goods_cost_mult = -0.15
+	country_military_goods_cost_mult = -0.25
 }
