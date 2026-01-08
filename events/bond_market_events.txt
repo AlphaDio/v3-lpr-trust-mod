@@ -355,7 +355,7 @@ bond_market_events.24 = {
 
 	# Immediate effect: Apply massive army bonus
 	immediate = {
-		add_treasury = -1000000
+		add_treasury = -1500000
 		add_modifier = {
 			name = lpr_bond_market_large_military_boost
 			years = 3
