@@ -57,6 +57,7 @@ bond_market_events.20 = {
         }
 
         # Radicalize trade unions significantly
+        # TODO: this doesn't add radicals, this instead adds loyalists
         add_loyalists = {
             value = large_radicals
             interest_group = ig:ig_trade_unions
