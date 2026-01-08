@@ -39,7 +39,7 @@ bond_market_events.1 = {
 			# Bonus for positive income despite high debt
 			if = {
 				limit = { net_fixed_income > 0 }
-				change_variable = { name = bond_trust add = 15 }
+				change_variable = { name = bond_trust add = 13 }
 			}
 		}
 		# Medium debt penalty (≥70%) - only if not in default
@@ -50,7 +50,7 @@ bond_market_events.1 = {
 			# Bonus for positive income despite high debt
 			if = {
 				limit = { net_fixed_income > 0 }
-				change_variable = { name = bond_trust add = 10 }
+				change_variable = { name = bond_trust add = 8 }
 			}
 		}
 		# Low debt penalty (≥50%) - only if not in default
@@ -61,7 +61,7 @@ bond_market_events.1 = {
 			# Bonus for positive income despite high debt
 			if = {
 				limit = { net_fixed_income > 0 }
-				change_variable = { name = bond_trust add = 7 }
+				change_variable = { name = bond_trust add = 5 }
 			}
 		}
 		# Bonus for low debt and surplus (≤20% debt + non-deficit)
@@ -199,7 +199,7 @@ bond_market_events.3 = {
 
 	immediate = {
 		add_loyalists = {
-			value = -0.01
+			value = -0.015
 			pop_type = capitalists
 		}
 	}
@@ -253,7 +253,7 @@ bond_market_events.4 = {
 
 	immediate = {
 		add_loyalists = {
-			value = -0.01
+			value = -0.015
 			interest_group = ig:ig_trade_unions
 		}
 	}
@@ -350,7 +350,7 @@ bond_market_events.24 = {
 	# Only trigger if conditions are met: >1500000 gold reserves and >60 trust
 	trigger = {
 		gold_reserves >= 1500000
-		var:bond_trust > 60
+		var:bond_trust > 70
 	}
 
 	# Immediate effect: Apply massive army bonus
